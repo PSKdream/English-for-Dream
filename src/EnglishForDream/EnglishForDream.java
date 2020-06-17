@@ -6,6 +6,7 @@
 package EnglishForDream;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,15 +14,11 @@ import java.sql.*;
  */
 public class EnglishForDream {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Database db = new Database();
-      //  db.createTable();
-       //db.insertData("Cat","แมว");
-       // System.out.println("--------------------");
-        db.selectData("vocab");
+        db.connect();
+        ArrayList <Object> data = db.selectData();
+        db.close();
     }
 
 }

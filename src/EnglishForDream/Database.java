@@ -17,7 +17,9 @@ import java.util.ArrayList;
  * @author dram-
  */
 public class Database {
-
+    String url = "jdbc:sqlite:data.db";
+    Connection c = null;
+    
     /*public Connection connect() {
         Connection c = null;
         try {
@@ -33,35 +35,28 @@ public class Database {
     }*/
     
     public void connect() {
-        Connection c = null;
         try {
             // db parameters
-            String url = "jdbc:sqlite:data.db";
             c = DriverManager.getConnection(url);
             System.out.println("Opened database successfully");
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                System.out.println(c);
-                if (c != null) {
-                    c.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
+        } 
+    }
+    public void close(){
+        try {
+            c.close();
+            System.out.println("Close database successfully");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
     public void createTable() {
-        Connection c = null;
-        Statement stmt = null;
+       Statement stmt = null;
 
         try {
-            c = DriverManager.getConnection("jdbc:sqlite:data.db");
-            System.out.println("Opened database successfully");
-
             stmt = c.createStatement();
             String sql = "CREATE TABLE DATA "
                     + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -69,7 +64,7 @@ public class Database {
                     + " meaning         TEXT    NOT NULL)";
             stmt.executeUpdate(sql);
             stmt.close();
-            c.close();
+           // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
@@ -78,14 +73,9 @@ public class Database {
     }
 
     public void insertData(String vocab, String meaning) {
-        Connection c = null;
         Statement stmt = null;
-
-        try {
-            c = DriverManager.getConnection("jdbc:sqlite:data.db");
+        try {    
             c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
             stmt = c.createStatement();
             String sql = "INSERT INTO DATA(vocab,meaning)"
                     + "VALUES ('" + vocab + "','" + meaning + "')";
@@ -93,26 +83,22 @@ public class Database {
 
             stmt.close();
             c.commit();
-            c.close();
+           // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.hashCode());
             if (e.hashCode() == 214126413) {
                 System.out.println("คำศัพท์ซ้ำ");
             }
-            System.exit(0);
+            //System.exit(0);
         }
         System.out.println("Records created successfully");
     }
 
     public ArrayList selectData() {
         ArrayList< ArrayList<Object>> data = new ArrayList();
-        Connection c = null;
         Statement stmt = null;
         try {
-            c = DriverManager.getConnection("jdbc:sqlite:data.db");
             c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
-
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM DATA;");
             while (rs.next()) {
@@ -129,7 +115,7 @@ public class Database {
 
             rs.close();
             stmt.close();
-            c.close();
+           // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
@@ -141,12 +127,9 @@ public class Database {
 
     public ArrayList selectData(String select) {
         ArrayList<Object> data = new ArrayList();
-        Connection c = null;
         Statement stmt = null;
         try {
-            c = DriverManager.getConnection("jdbc:sqlite:data.db");
             c.setAutoCommit(false);
-            System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT COUNT(ID) FROM DATA;");
@@ -159,7 +142,7 @@ public class Database {
 
             rs.close();
             stmt.close();
-            c.close();
+            //c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             if (e.hashCode() == 1880587981) {
