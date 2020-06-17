@@ -7,7 +7,7 @@ Computer Engineering , Panyapiwat Institute Of Management
 Tabel : DATA
 Name | Type | Schema
 ----- | ----- | ----- |
-ID | INTEGER | PK,AUTOINCREMENT |
+ID | INTEGER | PK , AUTOINCREMENT |
 vocab | TEXT | NOT NULL , UNIQUE |
 meaning | TEXT | NOT NULL |
 
