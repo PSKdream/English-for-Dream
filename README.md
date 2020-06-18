@@ -51,3 +51,13 @@ public static void main(String[] args) {
     }
 }
 ```
+#### Select Data For Row
+```java
+public static void main(String[] args) {
+        Select db = new Select();
+        db.connect();
+        ArrayList <Object> data = db.getRow("vocab","Dream"); //retrun ArrayList type Object
+        db.close();
+    }
+}
+```
