@@ -4,7 +4,7 @@ Computer Engineering , Panyapiwat Institute Of Management
 
 ## Database 
 
-Tabel : DATA
+Table : DATA
 Name | Type | Schema
 ----- | ----- | ----- |
 ID | INTEGER | PK , AUTOINCREMENT |
