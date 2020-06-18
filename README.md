@@ -46,7 +46,7 @@ public static void main(String[] args) {
 public static void main(String[] args) {
         Database db = new Database();
         db.connect();
-        ArrayList <Object> data = db.selectData(vocab); //retrun ArrayList type Object
+        ArrayList <Object> data = db.selectData("vocab"); //retrun ArrayList type Object
         db.close();
     }
 }
