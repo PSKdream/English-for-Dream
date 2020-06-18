@@ -22,7 +22,7 @@ SQlite JAR File : https://bitbucket.org/xerial/sqlite-jdbc/downloads/
 #### Insert Data
 ```java
 public static void main(String[] args) {
-        Database db = new Database();
+        Insert db = new Insert();
         db.connect();
         db.insertData("Dream", "ความฝัน");
         db.close();
@@ -33,9 +33,9 @@ public static void main(String[] args) {
 #### Select Data For Table 
 ```java
 public static void main(String[] args) {
-        Database db = new Database();
+        Select db = new Select();
         db.connect();
-        ArrayList <Object> data = db.selectData();  //retrun ArrayList type Object
+        ArrayList <Object> data = db.getTable();  //retrun ArrayList type Object
         db.close();
     }
 }
@@ -44,9 +44,9 @@ public static void main(String[] args) {
 #### Select Data For Column
 ```java
 public static void main(String[] args) {
-        Database db = new Database();
+        Select db = new Select();
         db.connect();
-        ArrayList <Object> data = db.selectData("vocab"); //retrun ArrayList type Object
+        ArrayList <Object> data = db.getColumn("vocab"); //retrun ArrayList type Object
         db.close();
     }
 }
