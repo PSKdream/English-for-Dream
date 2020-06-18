@@ -18,7 +18,7 @@ public class EnglishForDream {
     public static void main(String[] args) {
         Select sc = new Select();
         sc.connect();
-        sc.getTable();
+        sc.getRow("ID","1");
         sc.close();
     }
 
