@@ -5,9 +5,10 @@
  */
 package EnglishForDream;
 
+import Database.Execute;
 import java.sql.*;
 import java.util.ArrayList;
-
+import Database.Select;
 /**
  *
  * @author dram-
@@ -15,10 +16,10 @@ import java.util.ArrayList;
 public class EnglishForDream {
 
     public static void main(String[] args) {
-        Database db = new Database();
-        db.connect();
-        ArrayList <Object> data = db.selectData();
-        db.close();
+        Select sc = new Select();
+        sc.connect();
+        sc.getTable();
+        sc.close();
     }
 
 }
