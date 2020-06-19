@@ -5,11 +5,12 @@
  */
 package EnglishForDream;
 
+import TextToSpeech.TextToSpeech;
 import Database.Execute;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
-import tts.*;
+import GoogleTranslate.GoogleTranslate;
 /**
  *
  * @author dram-
@@ -23,6 +24,11 @@ public class EnglishForDream {
         sc.close();*/
         TextToSpeech tts = new TextToSpeech();
         tts.speak("My name is Dream");
+        
+        GoogleTranslate translator = new GoogleTranslate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
+        String text = translator.translte("My name is Dream", "en", "th");
+        System.out.println(text);
+        
     }
 
 }

@@ -25,7 +25,7 @@ public class GoogleTranslate {
         key = apiKey;
     }
 
-    String translte(String text, String from, String to) {
+    public String translte(String text, String from, String to) {
         StringBuilder result = new StringBuilder();
         try {
             String encodedText = URLEncoder.encode(text, "UTF-8");
@@ -77,11 +77,11 @@ public class GoogleTranslate {
         return null;
     }
 
-
+/*
     public static void main(String[] args) {
 
         GoogleTranslate translator = new GoogleTranslate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
         String text = translator.translte("Dream", "en", "th");
         System.out.println(text);
-    }
+    }*/
 }
