@@ -17,4 +17,8 @@ public class TextToSpeech {
             
         }
     }
+    public static void main(String[] args) {
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak("Dream");
+    }
 }
