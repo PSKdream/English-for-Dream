@@ -5,12 +5,10 @@
  */
 package EnglishForDream;
 
-import TextToSpeech.TextToSpeech;
 import Database.Database;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
-import GoogleTranslate.GoogleTranslate;
 /**
  *
  * @author dram-

@@ -20,6 +20,7 @@ public class Database {
 
     private String url;// = "jdbc:sqlite:data.db";
     protected Connection c = null;
+    
     public Database(){
         System.out.println("Error url is null.");
     }
