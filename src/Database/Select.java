@@ -13,8 +13,13 @@ import java.util.ArrayList;
  *
  * @author dram-
  */
-public class Select extends Execute {
-    
+public class Select extends Database {
+    public Select(){
+        super();
+    }
+    public Select(String url){
+        super(url);
+    }
     public ArrayList getTable() {
         ArrayList< ArrayList<Object>> data = new ArrayList();
         Statement stmt = null;

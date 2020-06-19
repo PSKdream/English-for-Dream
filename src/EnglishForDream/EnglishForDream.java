@@ -6,7 +6,7 @@
 package EnglishForDream;
 
 import TextToSpeech.TextToSpeech;
-import Database.Execute;
+import Database.Database;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
@@ -18,16 +18,17 @@ import GoogleTranslate.GoogleTranslate;
 public class EnglishForDream {
 
     public static void main(String[] args) {
-        /*Select sc = new Select();
-        sc.connect();
-        sc.getRow("ID","1");
-        sc.close();*/
+        Select sc = new Select();
+        //sc.connect();
+        sc.getTable();
+        /*sc.getRow("ID","1");
+        sc.close();
         TextToSpeech tts = new TextToSpeech();
         tts.speak("My name is Dream");
         
         GoogleTranslate translator = new GoogleTranslate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
         String text = translator.translte("My name is Dream", "en", "th");
-        System.out.println(text);
+        System.out.println(text);*/
         
     }
 

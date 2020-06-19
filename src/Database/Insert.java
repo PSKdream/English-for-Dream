@@ -11,7 +11,13 @@ import java.sql.Statement;
  *
  * @author dram-
  */
-public class Insert extends Execute {
+public class Insert extends Database {
+    public Insert(){
+        super();
+    }
+    public Insert(String url){
+        super(url);
+    }
     public void insertData(String vocab, String meaning) {
         Statement stmt = null;
         try {
@@ -23,13 +29,11 @@ public class Insert extends Execute {
 
             stmt.close();
             c.commit();
-            // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.hashCode());
             if (e.hashCode() == 214126413) {
                 System.out.println("คำศัพท์ซ้ำ");
             }
-            //System.exit(0);
         }
         System.out.println("Records created successfully");
     }
