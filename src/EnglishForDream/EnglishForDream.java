@@ -9,6 +9,7 @@ import Database.Execute;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
+import tts.TextToSpeech;
 /**
  *
  * @author dram-
@@ -20,6 +21,9 @@ public class EnglishForDream {
         sc.connect();
         sc.getRow("ID","1");
         sc.close();
+     
+       
     }
+    
 
 }
