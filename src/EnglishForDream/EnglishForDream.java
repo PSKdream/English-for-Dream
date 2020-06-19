@@ -9,7 +9,7 @@ import Database.Execute;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
-import tts.TextToSpeech;
+import tts.*;
 /**
  *
  * @author dram-
@@ -17,13 +17,12 @@ import tts.TextToSpeech;
 public class EnglishForDream {
 
     public static void main(String[] args) {
-        Select sc = new Select();
+        /*Select sc = new Select();
         sc.connect();
         sc.getRow("ID","1");
-        sc.close();
-     
-       
+        sc.close();*/
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak("My name is Dream");
     }
-    
 
 }
