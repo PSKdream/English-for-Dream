@@ -1,5 +1,5 @@
 
-package TextToSpeech;
+package EnglishForDream;
 
 import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;

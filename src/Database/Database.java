@@ -16,11 +16,17 @@ import java.util.ArrayList;
  *
  * @author dram-
  */
-public class Execute {
+public class Database {
 
-    String url = "jdbc:sqlite:data.db";
-    Connection c = null;
-
+    private String url;// = "jdbc:sqlite:data.db";
+    protected Connection c = null;
+    
+    public Database(){
+        System.out.println("Error url is null.");
+    }
+    public Database(String url){
+        this.url = url; 
+    }
     public void connect() {
         try {
             c = DriverManager.getConnection(url);
@@ -44,7 +50,7 @@ public class Execute {
 
         try {
             stmt = c.createStatement();
-            String sql = "CREATE TABLE DATA "
+           String sql = "CREATE TABLE DATA "
                     + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,"
                     + " vocab           TEXT    NOT NULL UNIQUE, "
                     + " meaning         TEXT    NOT NULL)";
