@@ -1,4 +1,3 @@
-
 package EnglishForDream;
 
 import com.google.gson.JsonElement;
@@ -13,15 +12,13 @@ import java.net.URL;
 import java.net.URLEncoder;
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- *
- * @author dram-
- */
-public class GoogleTranslate {
+public class Translate {
 
     private String key;
+    public Translate(){
+    }
 
-    public GoogleTranslate(String apiKey) {
+    public Translate(String apiKey) {
         key = apiKey;
     }
 
@@ -29,9 +26,7 @@ public class GoogleTranslate {
         StringBuilder result = new StringBuilder();
         try {
             String encodedText = URLEncoder.encode(text, "UTF-8");
-         //   System.out.println(encodedText);
             String urlStr = "https://www.googleapis.com/language/translate/v2?key=" + key + "&q=" + encodedText + "&target=" + to + "&source=" + from;
-           // System.out.println(urlStr);
             URL url = new URL(urlStr);
 
             HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
@@ -62,14 +57,11 @@ public class GoogleTranslate {
                             get("translatedText").getAsString();
                     
                     return translatedText;
-
                 }
             }
-
             if (conn.getResponseCode() != 200) {
                 System.err.println(result);
             }
-
         } catch (IOException | JsonSyntaxException ex) {
             System.err.println(ex.getMessage());
         }
@@ -77,11 +69,4 @@ public class GoogleTranslate {
         return null;
     }
 
-/*
-    public static void main(String[] args) {
-
-        GoogleTranslate translator = new GoogleTranslate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
-        String text = translator.translte("Dream", "en", "th");
-        System.out.println(text);
-    }*/
 }

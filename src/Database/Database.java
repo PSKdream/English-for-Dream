@@ -1,24 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
-import java.sql.*;
-import java.util.ArrayList;
+public class Database  {
 
-/**
- *
- * @author dram-
- */
-public class Database {
-
-    private String url;// = "jdbc:sqlite:data.db";
+    private String url;
     protected Connection c = null;
     
     public Database(){
@@ -30,12 +19,11 @@ public class Database {
     public void connect() {
         try {
             c = DriverManager.getConnection(url);
-            System.out.println("Opened database successfully");
+            System.out.println("Connect database successfully");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
-
     public void close() {
         try {
             c.close();
@@ -44,7 +32,6 @@ public class Database {
             System.out.println(e.getMessage());
         }
     }
-
     public void createTable() {
         Statement stmt = null;
 
