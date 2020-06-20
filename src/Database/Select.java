@@ -15,8 +15,8 @@ public class Select extends Database  {
         ArrayList< ArrayList<Object>> data = new ArrayList();
         Statement stmt = null;
         try {
-            c.setAutoCommit(false);
-            stmt = c.createStatement();
+            super.c.setAutoCommit(false);
+            stmt = super.c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM DATA;");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();
@@ -46,9 +46,9 @@ public class Select extends Database  {
         ArrayList<Object> data = new ArrayList();
         Statement stmt = null;
         try {
-            c.setAutoCommit(false);
+            super.c.setAutoCommit(false);
 
-            stmt = c.createStatement();
+            stmt = super.c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT " + columnName + " FROM DATA;");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();
@@ -73,9 +73,9 @@ public class Select extends Database  {
         ArrayList< ArrayList<Object>>  data = new ArrayList();
         Statement stmt = null;
         try {
-            c.setAutoCommit(false);
+            super.c.setAutoCommit(false);
 
-            stmt = c.createStatement();
+            stmt = super.c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM DATA WHERE "+columnName+" = '"+value+"'");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();

@@ -12,14 +12,14 @@ public class Insert extends Database {
     public void insertData(String vocab, String meaning) {
         Statement stmt = null;
         try {
-            c.setAutoCommit(false);
-            stmt = c.createStatement();
+            super.c.setAutoCommit(false);
+            stmt = super.c.createStatement();
             String sql = "INSERT INTO DATA(vocab,meaning)"
                     + "VALUES ('" + vocab + "','" + meaning + "')";
             stmt.executeUpdate(sql);
 
             stmt.close();
-            c.commit();
+            super.c.commit();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.hashCode());
             if (e.hashCode() == 214126413) {

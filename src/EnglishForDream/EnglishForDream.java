@@ -17,7 +17,7 @@ public class EnglishForDream extends Translate{
         tts.speak("My name is Dream");
         
         Translate translator = new Translate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
-        String text = translator.translte("My name is Dream", "en", "th");
+        String text = translator.translate("My name is Dream", "en", "th");
         System.out.println(text);*/
         
     }
