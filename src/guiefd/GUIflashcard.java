@@ -56,9 +56,10 @@ public class GUIflashcard extends javax.swing.JFrame {
         jButton6.setBorder(null);
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 140, 80));
 
-        jButton2.setText("next");
+        jButton2.setBackground(new java.awt.Color(255,153,153));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
         jButton2.setBorder(null);
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 250, 100, 70));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, 110, 90));
 
         jTextField2.setBackground(new java.awt.Color(224, 189, 153));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N

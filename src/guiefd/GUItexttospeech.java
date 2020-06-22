@@ -51,9 +51,10 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jTextField1.setText("Answer");
         jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 430, 70));
 
-        jButton2.setText("next");
+        jButton2.setBackground(new java.awt.Color(255,153,153));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
         jButton2.setBorder(null);
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 250, 100, 70));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, 110, 90));
 
         jButton7.setText("check");
         jButton7.setBorder(null);
