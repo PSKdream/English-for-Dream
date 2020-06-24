@@ -48,9 +48,10 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setText("next");
+        jButton2.setBackground(new java.awt.Color(255,153,153));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
         jButton2.setBorder(null);
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 250, 100, 70));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 110, 90));
 
         jButton7.setText("translate");
         jButton7.setBorder(null);
