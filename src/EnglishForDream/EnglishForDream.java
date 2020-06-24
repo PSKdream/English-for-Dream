@@ -1,6 +1,7 @@
 package EnglishForDream;
 
-import Database.Database;
+import Database.DatabaseFunction;
+import Database.Insert;
 import java.sql.*;
 import java.util.ArrayList;
 import Database.Select;
@@ -8,10 +9,10 @@ import Database.Select;
 public class EnglishForDream extends Translate{
 
     public static void main(String[] args) {
-        Database sc = new Select("jdbc:sqlite:data.db");
-        sc.connect();
-        //sc.getTable();
-        //sc.getRow("ID","1");
+        Select sc = new Select("jdbc:sqlite:data.db");
+       // sc.
+       /* sc.connect();
+       // sc.insertData("sasa", "dsas");
         sc.close();
         /*TextToSpeech tts = new TextToSpeech();
         tts.speak("My name is Dream");

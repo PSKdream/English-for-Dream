@@ -1,22 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Database;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Database  {
-
-    private String url;
-    protected Connection c = null;
+/**
+ *
+ * @author dram-
+ */
+public class Database extends DatabaseFunction {
     
-    public Database(){
-        System.out.println("Error url is null.");
-    }
-    public Database(String url){
-        this.url = url; 
-    }
-    public void connect() {
+     public void connect() {
         try {
             c = DriverManager.getConnection(url);
             System.out.println("Connect database successfully");
@@ -43,11 +42,11 @@ public class Database  {
                     + " meaning         TEXT    NOT NULL)";
             stmt.executeUpdate(sql);
             stmt.close();
-            // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         System.out.println("Table created successfully");
     } 
+    
 }

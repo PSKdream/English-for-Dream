@@ -1,8 +1,9 @@
 package Database;
 
 import java.sql.Statement;
+import java.util.ArrayList;
 
-public class Insert extends Database {
+public class Insert extends DatabaseFunction {
     public Insert(){
         super();
     }
@@ -28,4 +29,6 @@ public class Insert extends Database {
         }
         System.out.println("Records created successfully");
     }
+
+
 }
