@@ -14,8 +14,8 @@ public class EnglishForDream extends Translate{
         db.select.getTable();
         db.close();
         
-        //TextToSpeech tts = new TextToSpeech();
-        //tts.speak("My name is Dream");
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak("My name is Dream");
         /*Translate translator = new Translate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
         String text = translator.translate("My name is Dream", "en", "th");
         System.out.println(text);
