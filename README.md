@@ -33,7 +33,7 @@ public static void main(String[] args) {
 #### Select Data For Table 
 ```java
 public static void main(String[] args) {
-         Database db = new Database("jdbc:sqlite:data.db");
+        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         ArrayList <Object> data = db.select.getTable();  //retrun ArrayList type Object
         db.close();
@@ -65,6 +65,9 @@ public static void main(String[] args) {
 
 ## Translate
 Translate by Google API
+#### Learning for Database
+* https://github.com/google/gson
+* https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar
 ```java
 public static void main(String[] args) {
         Translate translator = new Translate("API KEY");
