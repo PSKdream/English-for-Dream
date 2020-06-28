@@ -22,9 +22,9 @@ SQlite JAR File : https://bitbucket.org/xerial/sqlite-jdbc/downloads/
 #### Insert Data
 ```java
 public static void main(String[] args) {
-        Insert db = new Insert();
+        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
-        db.insertData("Dream", "ความฝัน");
+        db.insert.insertData("Dream", "ความฝัน");
         db.close();
     }
 }
@@ -33,9 +33,9 @@ public static void main(String[] args) {
 #### Select Data For Table 
 ```java
 public static void main(String[] args) {
-        Select db = new Select();
+        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
-        ArrayList <Object> data = db.getTable();  //retrun ArrayList type Object
+        ArrayList <Object> data = db.select.getTable();  //retrun ArrayList type Object
         db.close();
     }
 }
@@ -44,9 +44,9 @@ public static void main(String[] args) {
 #### Select Data For Column
 ```java
 public static void main(String[] args) {
-        Select db = new Select();
+        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
-        ArrayList <Object> data = db.getColumn("vocab"); //retrun ArrayList type Object
+        ArrayList <Object> data = db.select.getColumn("vocab"); //retrun ArrayList type Object
         db.close();
     }
 }
@@ -54,10 +54,36 @@ public static void main(String[] args) {
 #### Select Data For Row
 ```java
 public static void main(String[] args) {
-        Select db = new Select();
+        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
-        ArrayList <Object> data = db.getRow("vocab","Dream"); //retrun ArrayList type Object
+        ArrayList <Object> data = db.select.getRow("vocab","Dream"); //retrun ArrayList type Object
         db.close();
     }
 }
 ```
+
+
+## Translate
+Translate by Google API
+#### Learning for Database
+* https://github.com/google/gson
+* https://search.maven.org/artifact/com.google.code.gson/gson/2.8.6/jar
+```java
+public static void main(String[] args) {
+        Translate translator = new Translate("API KEY");
+        String text = translator.translate("My name is Dream", "en", "th");
+        System.out.println(text);
+    }
+}
+```
+
+## TTS
+text to speech by free tts
+```java
+public static void main(String[] args) {
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak("My name is Dream");
+    }
+}
+```
+

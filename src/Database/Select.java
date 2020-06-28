@@ -1,22 +1,22 @@
 package Database;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Select extends Database  {
-    public Select(){
-        super();
-    }
-    public Select(String url){
-        super(url);
+public class Select  {
+    
+    Connection c = null;
+    Select(Connection c){
+        this.c=c;
     }
     public ArrayList getTable() {
         ArrayList< ArrayList<Object>> data = new ArrayList();
         Statement stmt = null;
         try {
-            super.c.setAutoCommit(false);
-            stmt = super.c.createStatement();
+            c.setAutoCommit(false);
+            stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM DATA;");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();
@@ -32,7 +32,6 @@ public class Select extends Database  {
 
             rs.close();
             stmt.close();
-            // c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
@@ -41,14 +40,13 @@ public class Select extends Database  {
         System.out.println("Operation done successfully");
         return data;
     }
-
     public ArrayList getColumn(String columnName) {
         ArrayList<Object> data = new ArrayList();
         Statement stmt = null;
         try {
-            super.c.setAutoCommit(false);
+            c.setAutoCommit(false);
 
-            stmt = super.c.createStatement();
+            stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT " + columnName + " FROM DATA;");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();
@@ -57,7 +55,7 @@ public class Select extends Database  {
             }
             rs.close();
             stmt.close();
-            //c.close();
+            //super.c.close();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             if (e.hashCode() == 1880587981) {
@@ -73,9 +71,9 @@ public class Select extends Database  {
         ArrayList< ArrayList<Object>>  data = new ArrayList();
         Statement stmt = null;
         try {
-            super.c.setAutoCommit(false);
+            c.setAutoCommit(false);
 
-            stmt = super.c.createStatement();
+            stmt = c.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM DATA WHERE "+columnName+" = '"+value+"'");
             while (rs.next()) {
                 ArrayList<Object> dataReturn = new ArrayList();
@@ -102,5 +100,7 @@ public class Select extends Database  {
         System.out.println("Operation done successfully");
         return data;
     }
+
+   
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiefd;
+package EnglishForDream;
 
 
  /**
@@ -49,7 +49,7 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton2.setBackground(new java.awt.Color(255,153,153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
         jButton2.setBorder(null);
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 110, 90));
 
@@ -74,7 +74,7 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/arLeft.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
         jButton4.setBorder(null);
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
@@ -101,20 +101,6 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        
-            
-  
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            
-            public void run() {
-                new GUIADDvocabtodata().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

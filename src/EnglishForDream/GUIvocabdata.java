@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiefd;
+package EnglishForDream;
 
 
  /**
  *
  * @author ptmna
  */
-public class GUItexttospeech extends javax.swing.JFrame {
+public class GUIvocabdata extends javax.swing.JFrame {
 
    
-    public GUItexttospeech() {
+    public GUIvocabdata() {
      
         initComponents();
     }
@@ -29,12 +29,10 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -46,21 +44,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField1.setText("Answer");
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 430, 70));
-
-        jButton2.setBackground(new java.awt.Color(255,153,153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, 110, 90));
-
-        jButton7.setText("check");
-        jButton7.setBorder(null);
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 140, 80));
-
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 660, 1150, 60));
 
         jPanel5.setBackground(new java.awt.Color(255, 153, 153));
         jPanel5.setForeground(new java.awt.Color(255, 153, 153));
@@ -68,21 +52,31 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/arLeft.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
         jButton4.setBorder(null);
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
-        jButton6.setText("speech");
-        jButton6.setBorder(null);
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 190));
+        jList1.setBackground(new java.awt.Color(255, 204, 204));
+        jList1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jList1.setForeground(new java.awt.Color(102, 51, 0));
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 770, 580));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,29 +86,14 @@ public class GUItexttospeech extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        
-            
-  
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            
-            public void run() {
-                new GUItexttospeech().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

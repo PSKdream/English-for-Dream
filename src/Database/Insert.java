@@ -1,25 +1,26 @@
 package Database;
 
+import java.sql.Connection;
 import java.sql.Statement;
+import java.util.ArrayList;
 
-public class Insert extends Database {
-    public Insert(){
-        super();
+public class Insert {
+    
+    Connection c = null;
+    Insert(Connection c){
+        this.c = c;
     }
-    public Insert(String url){
-        super(url);
-    }
+    
     public void insertData(String vocab, String meaning) {
         Statement stmt = null;
         try {
-            super.c.setAutoCommit(false);
-            stmt = super.c.createStatement();
+            c.setAutoCommit(false);
+            stmt = c.createStatement();
             String sql = "INSERT INTO DATA(vocab,meaning)"
                     + "VALUES ('" + vocab + "','" + meaning + "')";
             stmt.executeUpdate(sql);
-
             stmt.close();
-            super.c.commit();
+            c.commit();
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.hashCode());
             if (e.hashCode() == 214126413) {

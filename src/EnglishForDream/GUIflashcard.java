@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiefd;
+package EnglishForDream;
 
 
  /**
@@ -61,7 +61,7 @@ public class GUIflashcard extends javax.swing.JFrame {
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 180, 120));
 
         jButton2.setBackground(new java.awt.Color(255,153,153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/next.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
         jButton2.setBorder(null);
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 240, 110, 90));
 
@@ -80,11 +80,11 @@ public class GUIflashcard extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/arLeft.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
         jButton4.setBorder(null);
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/fontflashcard.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontflashcard.png"))); // NOI18N
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 10, -1, -1));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
@@ -94,13 +94,13 @@ public class GUIflashcard extends javax.swing.JFrame {
         jLabel1.setText("English for Dream");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 420, 120));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/bearface.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bearface.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 260));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/paw.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/paw.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/thunder.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/thunder.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, 200, 310));
 
@@ -118,20 +118,6 @@ public class GUIflashcard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        
-            
-  
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            
-            public void run() {
-                new GUIflashcard().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;

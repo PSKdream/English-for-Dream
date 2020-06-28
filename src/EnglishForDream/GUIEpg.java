@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guiefd;
+package EnglishForDream;
 
 
  /**
@@ -50,14 +50,13 @@ public class GUIEpg extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(250, 191, 180));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ptmna\\Documents\\NetBeansProjects\\GUIEP\\src\\guiefd\\bt1L.jpg")); // NOI18N
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 580, 280));
 
         jButton2.setBackground(new java.awt.Color(250, 191, 180));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/bt1R.jpg"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1R.jpg"))); // NOI18N
         jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 570, 280));
 
@@ -67,12 +66,12 @@ public class GUIEpg extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton3.setBackground(new java.awt.Color(255,153,153));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/Plus.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/Plus.png"))); // NOI18N
         jButton3.setBorder(null);
         jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 90, 80));
 
         jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/guiefd/vocab.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocab.png"))); // NOI18N
         jButton4.setBorder(null);
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
