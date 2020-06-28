@@ -85,7 +85,7 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jTextField1.setForeground(new java.awt.Color(102, 51, 0));
         jTextField1.setText("Answer");
         jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 190, 430, 70));
+        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 430, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
