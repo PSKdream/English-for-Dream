@@ -6,6 +6,8 @@
 package EnglishForDream;
 
 
+
+
  /**
  *
  * @author ptmna
@@ -50,7 +52,13 @@ public class GUIEpg extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(250, 191, 180));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1L.jpg"))); // NOI18N
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 580, 280));
 
         jButton2.setBackground(new java.awt.Color(250, 191, 180));
@@ -90,6 +98,12 @@ public class GUIEpg extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       setVisible(false);
+       new GUIflashcard().setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
