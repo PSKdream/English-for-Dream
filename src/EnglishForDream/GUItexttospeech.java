@@ -29,12 +29,15 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jButton5 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -47,18 +50,21 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField1.setText("Answer");
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, 430, 70));
-
         jButton2.setBackground(new java.awt.Color(255,153,153));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
         jButton2.setBorder(null);
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 230, 110, 90));
 
-        jButton7.setText("check");
-        jButton7.setBorder(null);
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 140, 80));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(102, 51, 0));
+        jTextField2.setText("Answer");
+        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 500, 70));
+
+        jButton5.setBackground(new java.awt.Color(255,153,153));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkfbt.png"))); // NOI18N
+        jButton5.setBorder(null);
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 160));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
 
@@ -77,11 +83,21 @@ public class GUItexttospeech extends javax.swing.JFrame {
         });
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontlistening.png"))); // NOI18N
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 340, 60));
+
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
-        jButton6.setText("speech");
-        jButton6.setBorder(null);
-        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 190));
+        jButton6.setBackground(new java.awt.Color(255,204,204));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 190, 160));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/hive.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 280, 310));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bear.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 234, 190, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,11 +122,14 @@ public class GUItexttospeech extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
