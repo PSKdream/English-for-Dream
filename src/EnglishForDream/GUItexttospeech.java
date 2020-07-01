@@ -5,24 +5,34 @@
  */
 package EnglishForDream;
 
+import Database.Database;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
+import java.util.ArrayList;
+import TranslateTTS.TextToSpeech;
 
  /**
  *
  * @author ptmna
  */
 public class GUItexttospeech extends javax.swing.JFrame {
-
-   
+    ArrayList<Object> data = new ArrayList();
+    ArrayList<Object> dataNow = new ArrayList();
+    
     public GUItexttospeech() {
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        
+        this.randVocab();
     }
-
+    public void randVocab(){
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
+        db.close();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,6 +73,11 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
         jButton7.setText("check");
         jButton7.setBorder(null);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 140, 80));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
@@ -86,6 +101,11 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
         jButton6.setText("speech");
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 230, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -106,6 +126,23 @@ public class GUItexttospeech extends javax.swing.JFrame {
         setVisible(false);
         new GUIEpg().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        this.dataNow = (ArrayList<Object>) this.data.get(0);
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak((String) this.dataNow.get(0));
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        //System.out.println(this.jTextField1.getText());
+        //System.out.println((String)this.dataNow.get(1));
+        if (this.jTextField1.getText().equals((String)this.dataNow.get(1))) {
+            System.out.println("true");
+            this.data.remove(0);
+            System.out.println(this.data);
+            this.dataNow = (ArrayList<Object>) this.data.get(0);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
