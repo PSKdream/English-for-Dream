@@ -63,12 +63,12 @@ public class GUIflashcard extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(255,153,153));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkfbt.png"))); // NOI18N
-        jButton5.setBorder(null);
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 190, 160));
+        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 190, 160));
 
         jButton6.setBackground(new java.awt.Color(255,153,153));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
-        jButton6.setBorder(null);
+        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton6MouseEntered(evt);
@@ -77,9 +77,8 @@ public class GUIflashcard extends javax.swing.JFrame {
                 jButton6MouseExited(evt);
             }
         });
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 190, 160));
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 190, 160));
 
-        jTextField2.setBackground(new java.awt.Color(224, 189, 153));
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(102, 51, 0));
         jTextField2.setText("Answer");
@@ -89,7 +88,7 @@ public class GUIflashcard extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(255,153,153));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
         jButton2.setBorder(null);
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 110, 90));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 110, 90));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 1150, 340));
 
