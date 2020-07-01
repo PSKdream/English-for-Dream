@@ -5,6 +5,12 @@
  */
 package EnglishForDream;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
+
+
 
  /**
  *
@@ -16,6 +22,9 @@ public class GUIflashcard extends javax.swing.JFrame {
     public GUIflashcard() {
    
         initComponents();
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
     }
 
     /**
@@ -31,15 +40,15 @@ public class GUIflashcard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -52,15 +61,37 @@ public class GUIflashcard extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkflashcard.png"))); // NOI18N
-        jButton5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 0, 580, 280));
+        jButton5.setBackground(new java.awt.Color(255,153,153));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkfbt.png"))); // NOI18N
+        jButton5.setBorder(null);
+        jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 190, 160));
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechFlash.png"))); // NOI18N
-        jButton6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 280));
+        jButton6.setBackground(new java.awt.Color(255,153,153));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        jButton6.setBorder(null);
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton6MouseExited(evt);
+            }
+        });
+        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 190, 160));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 1150, 280));
+        jTextField2.setBackground(new java.awt.Color(224, 189, 153));
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(102, 51, 0));
+        jTextField2.setText("Answer");
+        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 500, 70));
+
+        jButton2.setBackground(new java.awt.Color(255,153,153));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 240, 110, 90));
+
+        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 1150, 340));
 
         jPanel5.setBackground(new java.awt.Color(255, 153, 153));
         jPanel5.setForeground(new java.awt.Color(255, 153, 153));
@@ -70,53 +101,59 @@ public class GUIflashcard extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255,153,153));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontflashcard.png"))); // NOI18N
         jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255,153,153));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
-        jButton2.setBorder(null);
-        jPanel5.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 110, 90));
-
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 90));
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 51, 0));
         jLabel1.setText("Resistor");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 420, 120));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 420, 120));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bearface.png"))); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 210, 260));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 260));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/paw.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/thunder.png"))); // NOI18N
         jLabel3.setText("jLabel3");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 90, 200, 310));
-
-        jTextField2.setBackground(new java.awt.Color(224, 189, 153));
-        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(102, 51, 0));
-        jTextField2.setText("Answer");
-        jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
-        jPanel3.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 440, 70));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, 200, 310));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 1140, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 709, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+ImageIcon icon;
+    private void jButton6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseEntered
+       
+    }//GEN-LAST:event_jButton6MouseEntered
+
+    private void jButton6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseExited
+    
+    }//GEN-LAST:event_jButton6MouseExited
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        setVisible(false);
+        new GUIEpg().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
