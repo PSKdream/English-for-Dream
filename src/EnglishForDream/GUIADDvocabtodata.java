@@ -37,11 +37,11 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        speechflash = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        back = new javax.swing.JButton();
+        addword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -61,16 +61,25 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
 
         jButton7.setText("translate");
         jButton7.setBorder(null);
-        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, 140, 80));
-
-        jButton6.setText("speech");
-        jButton6.setBorder(null);
-        jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 140, 80));
+        jPanel2.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 190, 160));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(66, 4, 4));
         jLabel1.setText("Answer");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 410, 120));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, -10, 410, 120));
+
+        speechflash.setBackground(new java.awt.Color(255,153,153));
+        speechflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        speechflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        speechflash.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                speechflashMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                speechflashMouseExited(evt);
+            }
+        });
+        jPanel2.add(speechflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 190, 160));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
 
@@ -79,19 +88,19 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         jPanel5.setToolTipText("");
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
+        back.setBackground(new java.awt.Color(255,153,153));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/arLeft.png"))); // NOI18N
+        back.setBorder(null);
+        jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
-        jTextField1.setBackground(new java.awt.Color(224, 189, 153));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(102, 51, 0));
-        jTextField1.setText("Answer");
-        jTextField1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 430, 70));
+        addword.setBackground(new java.awt.Color(224, 189, 153));
+        addword.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        addword.setForeground(new java.awt.Color(102, 51, 0));
+        addword.setText("Answer");
+        addword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        jPanel3.add(addword, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 430, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,16 +116,24 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
+
+    }//GEN-LAST:event_speechflashMouseEntered
+
+    private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
+
+    }//GEN-LAST:event_speechflashMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addword;
+    private javax.swing.JButton back;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton speechflash;
     // End of variables declaration//GEN-END:variables
 }

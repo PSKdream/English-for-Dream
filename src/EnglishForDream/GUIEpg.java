@@ -37,11 +37,11 @@ public class GUIEpg extends javax.swing.JFrame {
 
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        gotoflash = new javax.swing.JButton();
+        gotolistening = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        gotoaddword = new javax.swing.JButton();
+        gotoworddata = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -55,44 +55,44 @@ public class GUIEpg extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 1150, 40));
 
-        jButton1.setBackground(new java.awt.Color(250, 191, 180));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1L.jpg"))); // NOI18N
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        gotoflash.setBackground(new java.awt.Color(250, 191, 180));
+        gotoflash.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        gotoflash.setForeground(new java.awt.Color(255, 255, 255));
+        gotoflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1L.jpg"))); // NOI18N
+        gotoflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        gotoflash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                gotoflashActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 580, 280));
+        jPanel3.add(gotoflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 580, 280));
 
-        jButton2.setBackground(new java.awt.Color(250, 191, 180));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1R.jpg"))); // NOI18N
-        jButton2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        gotolistening.setBackground(new java.awt.Color(250, 191, 180));
+        gotolistening.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        gotolistening.setForeground(new java.awt.Color(255, 255, 255));
+        gotolistening.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1R.jpg"))); // NOI18N
+        gotolistening.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        gotolistening.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                gotolisteningActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 570, 280));
+        jPanel3.add(gotolistening, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 570, 280));
 
         jPanel5.setBackground(new java.awt.Color(255, 153, 153));
         jPanel5.setForeground(new java.awt.Color(255, 153, 153));
         jPanel5.setToolTipText("");
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton3.setBackground(new java.awt.Color(255,153,153));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/Plus.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 90, 80));
+        gotoaddword.setBackground(new java.awt.Color(255,153,153));
+        gotoaddword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/Plus.png"))); // NOI18N
+        gotoaddword.setBorder(null);
+        jPanel5.add(gotoaddword, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 90, 80));
 
-        jButton4.setBackground(new java.awt.Color(255,153,153));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocab.png"))); // NOI18N
-        jButton4.setBorder(null);
-        jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
+        gotoworddata.setBackground(new java.awt.Color(255,153,153));
+        gotoworddata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocab.png"))); // NOI18N
+        gotoworddata.setBorder(null);
+        jPanel5.add(gotoworddata, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
@@ -110,15 +110,15 @@ public class GUIEpg extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void gotoflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoflashActionPerformed
        new GUIflashcard().setVisible(true);
         setVisible(false);        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_gotoflashActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void gotolisteningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotolisteningActionPerformed
         new GUItexttospeech().setVisible(true);
         setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_gotolisteningActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,10 +141,10 @@ public class GUIEpg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JButton jButton1;
-    javax.swing.JButton jButton2;
-    javax.swing.JButton jButton3;
-    javax.swing.JButton jButton4;
+    javax.swing.JButton gotoaddword;
+    javax.swing.JButton gotoflash;
+    javax.swing.JButton gotolistening;
+    javax.swing.JButton gotoworddata;
     javax.swing.JPanel jPanel2;
     javax.swing.JPanel jPanel3;
     javax.swing.JPanel jPanel5;
