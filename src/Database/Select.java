@@ -12,7 +12,7 @@ public class Select  {
         this.c=c;
     }
     public ArrayList getTable() {
-        ArrayList< ArrayList<Object>> data = new ArrayList();
+        ArrayList<ArrayList<Object>> data = new ArrayList();
         Statement stmt = null;
         try {
             c.setAutoCommit(false);
