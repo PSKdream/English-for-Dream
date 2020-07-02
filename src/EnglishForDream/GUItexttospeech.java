@@ -11,28 +11,35 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import TranslateTTS.TextToSpeech;
 
- /**
+/**
  *
  * @author ptmna
  */
 public class GUItexttospeech extends javax.swing.JFrame {
-    ArrayList<Object> data = new ArrayList();
-    ArrayList<Object> dataNow = new ArrayList();
-    
+
+    ArrayList<ArrayList<Object>> data = new ArrayList();
+    int point = 0;
+    int choice_total;
+
     public GUItexttospeech() {
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
-        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        this.answer.setText(" ");
         
         this.randVocab();
+        this.choice_total =this.data.size();
+        this.choiceNum.setText((this.choice_total-this.data.size()+1)+" out of "+this.choice_total);
     }
-    public void randVocab(){
+
+    public void randVocab() {
         Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
         db.close();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -53,6 +60,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
         speech = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        choiceNum = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -89,7 +97,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
         check.setBorder(null);
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                checkActionPerformed(evt);
             }
         });
         jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 160));
@@ -132,6 +140,10 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bear.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 234, 190, 160));
 
+        choiceNum.setText("jLabel5");
+        jPanel3.add(choiceNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
+        choiceNum.getAccessibleContext().setAccessibleName("choice");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,34 +163,39 @@ public class GUItexttospeech extends javax.swing.JFrame {
         new GUIEpg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void speechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechActionPerformed
-        this.dataNow = (ArrayList<Object>) this.data.get(0);
+    private void speechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         TextToSpeech tts = new TextToSpeech();
-        tts.speak((String) this.dataNow.get(0));
+        tts.speak((String) this.data.get(0).get(0));
         this.answer.requestFocus();
-    }//GEN-LAST:event_speechActionPerformed
+    }//GEN-LAST:event_jButton6ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //System.out.println(this.jTextField1.getText());
         //System.out.println((String)this.dataNow.get(1));
-        if (this.answer.getText().equals((String)this.dataNow.get(1))) {
+       // System.out.println(data.get(0).get(0));
+        if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
             System.out.println("true");
-            this.data.remove(0);
-           // System.out.println(this.data);
-            this.dataNow = (ArrayList<Object>) this.data.get(0);
-            this.answer.setText("");
+            this.point++;
         }
+        if (this.data.size()>1) {
+            this.data.remove(0);
+        }else if(this.data.size()==1){
+           this.answer.setEditable(false);
+        }
+        this.choiceNum.setText((this.choice_total-this.data.size()+1)+" out of "+this.choice_total);
+        this.answer.setText(" ");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void answerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_answerKeyPressed
         //System.out.println(evt.getKeyCode());
         if (evt.getKeyCode() == 10) {
-            this.jButton7ActionPerformed(null);
+            this.checkActionPerformed(null);
         }
     }//GEN-LAST:event_answerKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel choiceNum;
     private javax.swing.JTextField answer;
     private javax.swing.JButton back;
     private javax.swing.JButton check;
