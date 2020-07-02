@@ -21,6 +21,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
     
     public GUItexttospeech() {
         initComponents();
+        this.jTextField2.setText(" ");
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
@@ -130,6 +131,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 280, 310));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bear.png"))); // NOI18N
+        jLabel3.setText(" ");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 234, 190, 160));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,12 +163,12 @@ public class GUItexttospeech extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //System.out.println(this.jTextField1.getText());
         //System.out.println((String)this.dataNow.get(1));
-        if (this.jTextField2.getText().equals((String)this.dataNow.get(1))) {
+        if (this.jTextField2.getText().trim().equals((String)this.dataNow.get(1))) {
             System.out.println("true");
             this.data.remove(0);
            // System.out.println(this.data);
             this.dataNow = (ArrayList<Object>) this.data.get(0);
-            this.jTextField2.setText("");
+            this.jTextField2.setText(" ");
         }
     }//GEN-LAST:event_jButton7ActionPerformed
 
