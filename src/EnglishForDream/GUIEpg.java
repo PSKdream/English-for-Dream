@@ -9,6 +9,8 @@ import Database.Database ;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 
 
@@ -58,8 +60,16 @@ public class GUIEpg extends javax.swing.JFrame {
         gotoflash.setBackground(new java.awt.Color(250, 191, 180));
         gotoflash.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         gotoflash.setForeground(new java.awt.Color(255, 255, 255));
-        gotoflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1L.jpg"))); // NOI18N
+        gotoflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/btL.png"))); // NOI18N
         gotoflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        gotoflash.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                gotoflashMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                gotoflashMouseExited(evt);
+            }
+        });
         gotoflash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gotoflashActionPerformed(evt);
@@ -70,8 +80,16 @@ public class GUIEpg extends javax.swing.JFrame {
         gotolistening.setBackground(new java.awt.Color(250, 191, 180));
         gotolistening.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         gotolistening.setForeground(new java.awt.Color(255, 255, 255));
-        gotolistening.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bt1R.jpg"))); // NOI18N
+        gotolistening.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/btR.png"))); // NOI18N
         gotolistening.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        gotolistening.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                gotolisteningMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                gotolisteningMouseExited(evt);
+            }
+        });
         gotolistening.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gotolisteningActionPerformed(evt);
@@ -140,6 +158,25 @@ public class GUIEpg extends javax.swing.JFrame {
         setVisible(false);  
     }//GEN-LAST:event_gotoworddataActionPerformed
 
+    private void gotoflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotoflashMouseEntered
+        setMouseEntered_Exited(gotoflash,"btLover");
+    }//GEN-LAST:event_gotoflashMouseEntered
+
+    private void gotoflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotoflashMouseExited
+        setMouseEntered_Exited(gotoflash,"btL");
+    }//GEN-LAST:event_gotoflashMouseExited
+
+    private void gotolisteningMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseEntered
+       setMouseEntered_Exited(gotolistening,"btRover");
+    }//GEN-LAST:event_gotolisteningMouseEntered
+
+    private void gotolisteningMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseExited
+        setMouseEntered_Exited(gotolistening,"btR");
+    }//GEN-LAST:event_gotolisteningMouseExited
+public void setMouseEntered_Exited(JButton a,String Imagefile){
+        ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
+        a.setIcon(icon);
+    }
     /**
      * @param args the command line arguments
      */
