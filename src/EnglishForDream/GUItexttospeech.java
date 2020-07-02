@@ -5,19 +5,34 @@
  */
 package EnglishForDream;
 
+import Database.Database;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.ArrayList;
+import TranslateTTS.TextToSpeech;
 
  /**
  *
  * @author ptmna
  */
 public class GUItexttospeech extends javax.swing.JFrame {
-
-   
+    ArrayList<Object> data = new ArrayList();
+    ArrayList<Object> dataNow = new ArrayList();
+    
     public GUItexttospeech() {
-     
         initComponents();
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        
+        this.randVocab();
     }
-
+    public void randVocab(){
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
+        db.close();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,13 +72,26 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jTextField2.setForeground(new java.awt.Color(102, 51, 0));
-        jTextField2.setText("Answer");
+        jTextField2.setToolTipText("");
         jTextField2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextField2.setName("inputAns"); // NOI18N
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
         jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 40, 500, 70));
+        jTextField2.getAccessibleContext().setAccessibleName("");
 
         jButton5.setBackground(new java.awt.Color(255,153,153));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkfbt.png"))); // NOI18N
         jButton5.setBorder(null);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 160));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
@@ -91,6 +119,11 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jButton6.setBackground(new java.awt.Color(255,204,204));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 160, 190, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/hive.png"))); // NOI18N
@@ -117,6 +150,32 @@ public class GUItexttospeech extends javax.swing.JFrame {
         setVisible(false);
         new GUIEpg().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        this.dataNow = (ArrayList<Object>) this.data.get(0);
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak((String) this.dataNow.get(0));
+        this.jTextField2.requestFocus();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        //System.out.println(this.jTextField1.getText());
+        //System.out.println((String)this.dataNow.get(1));
+        if (this.jTextField2.getText().equals((String)this.dataNow.get(1))) {
+            System.out.println("true");
+            this.data.remove(0);
+           // System.out.println(this.data);
+            this.dataNow = (ArrayList<Object>) this.data.get(0);
+            this.jTextField2.setText("");
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        //System.out.println(evt.getKeyCode());
+        if (evt.getKeyCode() == 10) {
+            this.jButton7ActionPerformed(null);
+        }
+    }//GEN-LAST:event_jTextField2KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

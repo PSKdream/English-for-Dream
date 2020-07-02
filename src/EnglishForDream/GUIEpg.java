@@ -5,6 +5,10 @@
  */
 package EnglishForDream;
 
+import Database.Database ;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.ArrayList;
 
 
 
@@ -16,8 +20,10 @@ public class GUIEpg extends javax.swing.JFrame {
 
    
     public GUIEpg() {
-     
         initComponents();
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
     }
 
     /**
@@ -105,38 +111,42 @@ public class GUIEpg extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       setVisible(false);
        new GUIflashcard().setVisible(true);
-        
+        setVisible(false);        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        setVisible(false);
         new GUItexttospeech().setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-            
-  
+      
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
                 new GUIEpg().setVisible(true);
             }
         });
+        
+      /*  Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        ArrayList <Object> data = db.select.getRow("vocab","Dream"); //retrun ArrayList type Object
+        db.close();*/
+         
+    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
+    javax.swing.JButton jButton1;
+    javax.swing.JButton jButton2;
+    javax.swing.JButton jButton3;
+    javax.swing.JButton jButton4;
+    javax.swing.JPanel jPanel2;
+    javax.swing.JPanel jPanel3;
+    javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
 }
