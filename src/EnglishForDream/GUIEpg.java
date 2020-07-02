@@ -87,11 +87,21 @@ public class GUIEpg extends javax.swing.JFrame {
         gotoaddword.setBackground(new java.awt.Color(255,153,153));
         gotoaddword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/Plus.png"))); // NOI18N
         gotoaddword.setBorder(null);
+        gotoaddword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotoaddwordActionPerformed(evt);
+            }
+        });
         jPanel5.add(gotoaddword, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 90, 80));
 
         gotoworddata.setBackground(new java.awt.Color(255,153,153));
         gotoworddata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocab.png"))); // NOI18N
         gotoworddata.setBorder(null);
+        gotoworddata.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gotoworddataActionPerformed(evt);
+            }
+        });
         jPanel5.add(gotoworddata, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
@@ -119,6 +129,16 @@ public class GUIEpg extends javax.swing.JFrame {
         new GUItexttospeech().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_gotolisteningActionPerformed
+
+    private void gotoaddwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoaddwordActionPerformed
+        new GUIADDvocabtodata().setVisible(true);
+        setVisible(false);    
+    }//GEN-LAST:event_gotoaddwordActionPerformed
+
+    private void gotoworddataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoworddataActionPerformed
+        new GUIvocabdata().setVisible(true);
+        setVisible(false);  
+    }//GEN-LAST:event_gotoworddataActionPerformed
 
     /**
      * @param args the command line arguments
