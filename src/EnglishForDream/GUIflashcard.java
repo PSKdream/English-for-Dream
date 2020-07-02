@@ -77,6 +77,11 @@ public class GUIflashcard extends javax.swing.JFrame {
                 speechflashMouseExited(evt);
             }
         });
+        speechflash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                speechflashActionPerformed(evt);
+            }
+        });
         jPanel2.add(speechflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 190, 160));
 
         answer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -153,6 +158,10 @@ ImageIcon icon;
         setVisible(false);
         new GUIEpg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
+
+    private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_speechflashActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
