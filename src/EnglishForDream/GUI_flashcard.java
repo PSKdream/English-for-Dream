@@ -16,10 +16,10 @@ import javax.swing.ImageIcon;
  *
  * @author ptmna
  */
-public class GUIflashcard extends javax.swing.JFrame {
+public class GUI_flashcard extends javax.swing.JFrame {
 
    
-    public GUIflashcard() {
+    public GUI_flashcard() {
    
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -156,7 +156,7 @@ ImageIcon icon;
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUIEpg().setVisible(true);
+        new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed

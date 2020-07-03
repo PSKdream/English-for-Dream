@@ -5,23 +5,41 @@
  */
 package EnglishForDream;
 
+import Database.Database;
+import TranslateTTS.TextToSpeech;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
-
- /**
+/**
  *
  * @author ptmna
  */
-public class GUIvocabdata extends javax.swing.JFrame {
+public class GUI_vocabdata extends javax.swing.JFrame {
 
-   
-    public GUIvocabdata() {
-     
+    ArrayList<ArrayList<Object>> data = new ArrayList();
+
+    public GUI_vocabdata() {
+
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
-        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        this.data = db.select.getTable(); //retrun ArrayList type Object
+        db.close();
+
+        
+        DefaultTableModel model = (DefaultTableModel) this.tableData.getModel();
+        for (int i = 0; i <  this.data.size(); i++) {
+            model.addRow(new Object[0]);
+            model.setValueAt(this.data.get(i).get(1), i, 0);
+            model.setValueAt(this.data.get(i).get(2), i, 1);
+        }
     }
 
     /**
@@ -37,8 +55,8 @@ public class GUIvocabdata extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        vocablist = new javax.swing.JList<>();
+        ScrollPane = new javax.swing.JScrollPane();
+        tableData = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -69,25 +87,37 @@ public class GUIvocabdata extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
-        vocablist.setBackground(new java.awt.Color(255, 204, 204));
-        vocablist.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        vocablist.setForeground(new java.awt.Color(102, 51, 0));
-        vocablist.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(vocablist);
+        tableData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tableData.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 80, 770, 580));
+            },
+            new String [] {
+                "Vocab", "Meaning"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableDataMouseClicked(evt);
+            }
+        });
+        ScrollPane.setViewportView(tableData);
+
+        jPanel3.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 910, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,17 +129,27 @@ public class GUIvocabdata extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUIEpg().setVisible(true);
+        new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
- 
+    private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
+        if (evt.getClickCount() == 2) {
+           // JTable target = new JTable();
+            JTable target = (JTable)evt.getSource();
+               int row = target.getSelectedRow(); // select a row
+              TextToSpeech tts = new TextToSpeech();
+              
+              tts.speak((String) this.tableData.getValueAt(row, 0));
+        }
+    }//GEN-LAST:event_tableDataMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JButton back;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JList<String> vocablist;
+    private javax.swing.JTable tableData;
     // End of variables declaration//GEN-END:variables
 }

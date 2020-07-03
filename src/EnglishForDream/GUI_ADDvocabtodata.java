@@ -15,10 +15,10 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUIADDvocabtodata extends javax.swing.JFrame {
+public class GUI_ADDvocabtodata extends javax.swing.JFrame {
 
    
-    public GUIADDvocabtodata() {
+    public GUI_ADDvocabtodata() {
      
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -145,7 +145,7 @@ public class GUIADDvocabtodata extends javax.swing.JFrame {
     }//GEN-LAST:event_speechflashMouseEntered
 
     private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
-setMouseEntered_Exited(speechflash,"speechbt");
+        setMouseEntered_Exited(speechflash,"speechbt");
     }//GEN-LAST:event_speechflashMouseExited
 
     private void addvocabtodataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addvocabtodataActionPerformed
@@ -154,7 +154,7 @@ setMouseEntered_Exited(speechflash,"speechbt");
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
        setVisible(false);
-        new GUIEpg().setVisible(true);
+        new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed

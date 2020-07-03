@@ -17,13 +17,13 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUItexttospeech extends javax.swing.JFrame {
+public class GUI_texttospeech extends javax.swing.JFrame {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
     int point = 0;
     int choice_total;
 
-    public GUItexttospeech() {
+    public GUI_texttospeech() {
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -165,7 +165,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUIEpg().setVisible(true);
+        new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void speechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -177,7 +177,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
     private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //System.out.println(this.jTextField1.getText());
         //System.out.println((String)this.dataNow.get(1));
-       // System.out.println(data.get(0).get(0));
+        //System.out.println(data.get(0).get(0));
         if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
             System.out.println("true");
             this.point++;
