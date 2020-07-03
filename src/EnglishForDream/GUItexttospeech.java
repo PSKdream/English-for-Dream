@@ -141,7 +141,7 @@ public class GUItexttospeech extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/hive.png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 280, 310));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bear.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/yellowbeargif.gif"))); // NOI18N
         jLabel3.setText(" ");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 234, 190, 160));
 

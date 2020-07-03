@@ -46,9 +46,9 @@ public class GUIflashcard extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         keyword = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -122,15 +122,15 @@ public class GUIflashcard extends javax.swing.JFrame {
         keyword.setText("Resistor");
         jPanel3.add(keyword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 420, 120));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/bearface.png"))); // NOI18N
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 260));
-
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/paw.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/thunder.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 80, 200, 310));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/gifbrownbear.gif"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,9 +168,9 @@ ImageIcon icon;
     private javax.swing.JTextField answer;
     private javax.swing.JButton back;
     private javax.swing.JButton checkflash;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
