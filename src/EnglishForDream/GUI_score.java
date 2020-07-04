@@ -8,6 +8,7 @@ package EnglishForDream;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 /**
  *
@@ -19,7 +20,9 @@ public class GUI_score extends javax.swing.JFrame {
      * Creates new form GUI_score
      */
     public GUI_score(ArrayList<ArrayList<Object>> wrongAns, String point) {
-        initComponents();        
+       setUndecorated(true); 
+        initComponents();
+        System.out.println("result: "+isUndecorated());      
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
