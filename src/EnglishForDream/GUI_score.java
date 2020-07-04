@@ -48,6 +48,7 @@ public class GUI_score extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         wrongWordArea = new javax.swing.JTextArea();
         ToMainMenu = new javax.swing.JButton();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +66,13 @@ public class GUI_score extends javax.swing.JFrame {
             }
         });
 
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,8 +87,10 @@ public class GUI_score extends javax.swing.JFrame {
                                 .addGap(135, 135, 135)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(191, 191, 191)
-                        .addComponent(ToMainMenu)))
+                        .addGap(91, 91, 91)
+                        .addComponent(ToMainMenu)
+                        .addGap(104, 104, 104)
+                        .addComponent(exit)))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,9 +100,11 @@ public class GUI_score extends javax.swing.JFrame {
                 .addComponent(scoreText, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(ToMainMenu)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ToMainMenu)
+                    .addComponent(exit))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -103,12 +115,17 @@ public class GUI_score extends javax.swing.JFrame {
         new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_ToMainMenuActionPerformed
 
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(1);
+    }//GEN-LAST:event_exitActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ToMainMenu;
+    private javax.swing.JButton exit;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel scoreText;
     private javax.swing.JTextArea wrongWordArea;
