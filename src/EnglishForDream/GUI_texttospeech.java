@@ -185,7 +185,8 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         } else {
             this.wrongAns.add(this.data.get(0));
         }
-        if (this.data.size() > 1) {
+        
+        if (this.data.size()>1) {
             this.data.remove(0);
         } else if (this.data.size() == 1) {
             this.answer.setEditable(false);
