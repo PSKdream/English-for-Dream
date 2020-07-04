@@ -40,7 +40,7 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         next = new javax.swing.JButton();
         translate = new javax.swing.JButton();
         translatedLabel = new javax.swing.JLabel();
-        speechflash = new javax.swing.JButton();
+        texttospeech = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -72,23 +72,23 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         translatedLabel.setText("Answer");
         jPanel2.add(translatedLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 410, 120));
 
-        speechflash.setBackground(new java.awt.Color(255,153,153));
-        speechflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
-        speechflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        speechflash.addMouseListener(new java.awt.event.MouseAdapter() {
+        texttospeech.setBackground(new java.awt.Color(255,153,153));
+        texttospeech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        texttospeech.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        texttospeech.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                speechflashMouseEntered(evt);
+                texttospeechMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                speechflashMouseExited(evt);
+                texttospeechMouseExited(evt);
             }
         });
-        speechflash.addActionListener(new java.awt.event.ActionListener() {
+        texttospeech.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                speechflashActionPerformed(evt);
+                texttospeechActionPerformed(evt);
             }
         });
-        jPanel2.add(speechflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 190, 160));
+        jPanel2.add(texttospeech, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 190, 160));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
 
@@ -116,6 +116,11 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         addword.setForeground(new java.awt.Color(102, 51, 0));
         addword.setText("Answer");
         addword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        addword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addwordActionPerformed(evt);
+            }
+        });
         jPanel3.add(addword, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 430, 70));
 
         addvocabtodata.setText("Addvocabtodata");
@@ -134,19 +139,19 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
-        setMouseEntered_Exited(speechflash,"speechover");
-    }//GEN-LAST:event_speechflashMouseEntered
+    private void texttospeechMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_texttospeechMouseEntered
+        setMouseEntered_Exited(texttospeech,"speechover");
+    }//GEN-LAST:event_texttospeechMouseEntered
 
-    private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
-        setMouseEntered_Exited(speechflash,"speechbt");
-    }//GEN-LAST:event_speechflashMouseExited
+    private void texttospeechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_texttospeechMouseExited
+        setMouseEntered_Exited(texttospeech,"speechbt");
+    }//GEN-LAST:event_texttospeechMouseExited
 
     private void addvocabtodataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addvocabtodataActionPerformed
         // TODO add your handling code here:
@@ -157,9 +162,13 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         new GUI_Epg().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
+    private void texttospeechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texttospeechActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_speechflashActionPerformed
+    }//GEN-LAST:event_texttospeechActionPerformed
+
+    private void addwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addwordActionPerformed
     public void setMouseEntered_Exited(JButton a,String Imagefile){
         ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
         a.setIcon(icon);
@@ -174,7 +183,7 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JButton next;
-    private javax.swing.JButton speechflash;
+    private javax.swing.JButton texttospeech;
     private javax.swing.JButton translate;
     private javax.swing.JLabel translatedLabel;
     // End of variables declaration//GEN-END:variables
