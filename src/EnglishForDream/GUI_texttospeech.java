@@ -182,6 +182,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
             System.out.println("true");
             this.point++;
         }
+        
         if (this.data.size()>1) {
             this.data.remove(0);
         }else if(this.data.size()==1){

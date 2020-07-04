@@ -24,6 +24,7 @@ public class Database {
     
     public Insert insert = null;
     public Select select = null;
+    public Delete delete = null;
     
 
     public Database() {
@@ -39,6 +40,7 @@ public class Database {
             c = DriverManager.getConnection(url);
              insert = new Insert(c);
              select = new Select(c);
+             delete = new Delete(c);
             System.out.println("Connect database successfully");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
