@@ -20,6 +20,7 @@ import javax.swing.JButton;
 public class GUI_texttospeech extends javax.swing.JFrame {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
+    ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
     int point = 0;
     int choice_total;
 
@@ -29,10 +30,10 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
         this.answer.setText(" ");
-        
+
         this.randVocab();
-        this.choice_total =this.data.size();
-        this.choiceNum.setText((this.choice_total-this.data.size()+1)+" out of "+this.choice_total);
+        this.choice_total = this.data.size();
+        this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
     }
 
     public void randVocab() {
@@ -181,13 +182,17 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
             System.out.println("true");
             this.point++;
+        } else {
+            this.wrongAns.add(this.data.get(0));
         }
+        
         if (this.data.size()>1) {
             this.data.remove(0);
-        }else if(this.data.size()==1){
-           this.answer.setEditable(false);
+        } else if (this.data.size() == 1) {
+            this.answer.setEditable(false);
+            new GUI_score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
         }
-        this.choiceNum.setText((this.choice_total-this.data.size()+1)+" out of "+this.choice_total);
+        this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
         this.answer.setText(" ");
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -199,14 +204,14 @@ public class GUI_texttospeech extends javax.swing.JFrame {
     }//GEN-LAST:event_answerKeyPressed
 
     private void speechMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseEntered
-       setMouseEntered_Exited(speech,"speechover");
+        setMouseEntered_Exited(speech, "speechover");
     }//GEN-LAST:event_speechMouseEntered
 
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
-      setMouseEntered_Exited(speech,"speechbt");
+        setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
-public void setMouseEntered_Exited(JButton a,String Imagefile){
-        ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
+    public void setMouseEntered_Exited(JButton a, String Imagefile) {
+        ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);
     }
 

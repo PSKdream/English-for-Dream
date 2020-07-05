@@ -57,6 +57,7 @@ public class GUI_vocabdata extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         ScrollPane = new javax.swing.JScrollPane();
         tableData = new javax.swing.JTable();
+        Delete = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -111,13 +112,21 @@ public class GUI_vocabdata extends javax.swing.JFrame {
         });
         ScrollPane.setViewportView(tableData);
 
-        jPanel3.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 910, 510));
+        jPanel3.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 940, 440));
+
+        Delete.setText("Delete");
+        Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteActionPerformed(evt);
+            }
+        });
+        jPanel3.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 580, 170, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,13 +147,29 @@ public class GUI_vocabdata extends javax.swing.JFrame {
             JTable target = (JTable)evt.getSource();
                int row = target.getSelectedRow(); // select a row
               TextToSpeech tts = new TextToSpeech();
-              
               tts.speak((String) this.tableData.getValueAt(row, 0));
         }
     }//GEN-LAST:event_tableDataMouseClicked
 
+    private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        int count =  this.tableData.getSelectedRows().length;
+        System.out.println(this.tableData.getSelectedRows());
+        for (int i = 0; i < count; i++) {
+            String text = (String)this.tableData.getValueAt(this.tableData.getSelectedRows()[i], 0);
+            System.out.println(text);
+            db.delete.delete(text);
+        }
+        for (int i = count-1; i >= 0; i--) {
+            ((DefaultTableModel)this.tableData.getModel()).removeRow(this.tableData.getSelectedRows()[i]);
+        }
+        db.close();
+    }//GEN-LAST:event_DeleteActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Delete;
     private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JButton back;
     private javax.swing.JPanel jPanel2;

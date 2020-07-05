@@ -141,13 +141,4 @@ public class Select  {
         System.out.println("Operation done successfully");
         return data;
     }
-    
-   
-    public static void main(String[] args) {
-         Database db = new Database("jdbc:sqlite:data.db");
-        db.connect();
-        ArrayList <Object> data = db.select.query("SELECT * FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
-        db.close();
-        
-    }
 }
