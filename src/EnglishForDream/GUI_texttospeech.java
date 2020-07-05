@@ -96,7 +96,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
                 checkActionPerformed(evt);
             }
         });
-        jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 190, 160));
+        jPanel2.add(check, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 190, 160));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 1150, 330));
 
