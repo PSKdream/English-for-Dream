@@ -3,22 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_texttospeech.java</file>
-            <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/Database/Select.java</file>
             <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_Epg.java</file>
+            <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_score.java</file>
             <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_vocabdata.java</file>
-            <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_flashcard.java</file>
             <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/EnglishForDream/GUI_ADDvocabtodata.java</file>
-            <file>file:/D:/Users/dram-/Desktop/English%20for%20dream/src/Database/Insert.java</file>
-=======
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/GUI_vocabdata.java</file>
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/GUI_ADDvocabtodata.java</file>
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/GUI_Epg.java</file>
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/GUI_flashcard.java</file>
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/GUI_texttospeech.java</file>
-            <file>file:/C:/Users/ptmna/Documents/GitHub/English-for-Dream/src/EnglishForDream/01test.java</file>
->>>>>>> fb1ccd8113be69ac738f41afe7669cb098c1eb37
         </group>
     </open-files>
 </project-private>

@@ -88,7 +88,7 @@ public class GUI_vocabdata extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
-        tableData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        tableData.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         tableData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

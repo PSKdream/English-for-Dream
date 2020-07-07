@@ -146,8 +146,10 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         jLabel3.setText(" ");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 234, 190, 160));
 
+        choiceNum.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        choiceNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         choiceNum.setText("jLabel5");
-        jPanel3.add(choiceNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
+        jPanel3.add(choiceNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 340, 360, -1));
         choiceNum.getAccessibleContext().setAccessibleName("choice");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -190,6 +192,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
             this.data.remove(0);
         } else if (this.data.size() == 1) {
             this.answer.setEditable(false);
+            setVisible(false);
             new GUI_score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
         }
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
@@ -213,6 +216,9 @@ public class GUI_texttospeech extends javax.swing.JFrame {
     public void setMouseEntered_Exited(JButton a, String Imagefile) {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);
+    }
+    public void Exit() {
+        setVisible(false);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
