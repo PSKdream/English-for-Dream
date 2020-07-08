@@ -145,7 +145,7 @@ public class GUI_flashcard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-ImageIcon icon;
+    ImageIcon icon;
     private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
        
     }//GEN-LAST:event_speechflashMouseEntered
