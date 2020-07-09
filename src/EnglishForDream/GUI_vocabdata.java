@@ -88,6 +88,7 @@ public class GUI_vocabdata extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
+        tableData.setBackground(new java.awt.Color(225,205,158));
         tableData.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
         tableData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -105,6 +106,7 @@ public class GUI_vocabdata extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tableData.setGridColor(new java.awt.Color(240, 240, 240));
         tableData.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableDataMouseClicked(evt);
