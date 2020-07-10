@@ -28,7 +28,6 @@ public class GUI_score extends javax.swing.JFrame {
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
         String text = "";
-        GUI_texttospeech gtts = new GUI_texttospeech();
         for (int i = 0; i < wrongAns.size(); i++) {
             text = text + wrongAns.get(i).get(0) + " - " + wrongAns.get(i).get(1) + "\n";
         }

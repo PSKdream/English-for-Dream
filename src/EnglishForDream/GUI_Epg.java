@@ -50,6 +50,7 @@ public class GUI_Epg extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
         jPanel3.setMaximumSize(new java.awt.Dimension(450, 720));
+        jPanel3.setPreferredSize(new java.awt.Dimension(1140, 709));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
