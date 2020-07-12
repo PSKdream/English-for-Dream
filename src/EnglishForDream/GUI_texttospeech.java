@@ -81,6 +81,11 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         answer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
         answer.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         answer.setName("inputAns"); // NOI18N
+        answer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                answerActionPerformed(evt);
+            }
+        });
         answer.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 answerKeyPressed(evt);
@@ -213,6 +218,10 @@ public class GUI_texttospeech extends javax.swing.JFrame {
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
         setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
+
+    private void answerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_answerActionPerformed
     public void setMouseEntered_Exited(JButton a, String Imagefile) {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);
