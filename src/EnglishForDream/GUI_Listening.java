@@ -17,14 +17,14 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUI_texttospeech extends javax.swing.JFrame {
+public class GUI_Listening extends javax.swing.JFrame {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
     ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
     int point = 0;
     int choice_total;
 
-    public GUI_texttospeech() {
+    public GUI_Listening() {
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -81,11 +81,6 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         answer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
         answer.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         answer.setName("inputAns"); // NOI18N
-        answer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                answerActionPerformed(evt);
-            }
-        });
         answer.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 answerKeyPressed(evt);
@@ -173,7 +168,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUI_Epg().setVisible(true);
+        new GUI_Home().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void speechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -186,7 +181,8 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         //System.out.println(this.jTextField1.getText());
         //System.out.println((String)this.dataNow.get(1));
         //System.out.println(data.get(0).get(0));
-        if (this.answer.getText().trim().equals((String) this.data.get(0).get(0))) {
+
+        if (this.answer.getText().trim().toLowerCase().equals(((String) this.data.get(0).get(0)).trim().toLowerCase())) {
             System.out.println("true");
             this.point++;
         } else {
@@ -198,7 +194,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         } else if (this.data.size() == 1) {
             this.answer.setEditable(false);
             setVisible(false);
-            new GUI_score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
+            new GUI_Score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
         }
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
         this.answer.setText(" ");
@@ -218,10 +214,6 @@ public class GUI_texttospeech extends javax.swing.JFrame {
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
         setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
-
-    private void answerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_answerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_answerActionPerformed
     public void setMouseEntered_Exited(JButton a, String Imagefile) {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);

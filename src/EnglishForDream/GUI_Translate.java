@@ -16,9 +16,9 @@ import TranslateTTS.*;
  *
  * @author ptmna
  */
-public class GUI_ADDvocabtodata extends javax.swing.JFrame {
+public class GUI_Translate extends javax.swing.JFrame {
 
-    public GUI_ADDvocabtodata() {
+    public GUI_Translate() {
 
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -172,7 +172,7 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUI_Epg().setVisible(true);
+        new GUI_Home().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void texttospeechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texttospeechActionPerformed

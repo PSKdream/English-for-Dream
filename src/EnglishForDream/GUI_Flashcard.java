@@ -16,14 +16,14 @@ import javax.swing.ImageIcon;
  *
  * @author ptmna
  */
-public class GUI_flashcard extends javax.swing.JFrame {
+public class GUI_Flashcard extends javax.swing.JFrame {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
     ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
     int point = 0;
     int choice_total;
 
-    public GUI_flashcard() {
+    public GUI_Flashcard() {
 
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -33,6 +33,9 @@ public class GUI_flashcard extends javax.swing.JFrame {
         this.choice_total = this.data.size();
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
         this.showVocab();
+        
+        this.answer.requestFocus();
+        this.answer.setText(" ");
     }
 
     public void randVocab() {
@@ -60,7 +63,6 @@ public class GUI_flashcard extends javax.swing.JFrame {
         checkflash = new javax.swing.JButton();
         speechflash = new javax.swing.JButton();
         answer = new javax.swing.JTextField();
-        next = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         keyword = new javax.swing.JLabel();
@@ -94,14 +96,6 @@ public class GUI_flashcard extends javax.swing.JFrame {
         speechflash.setBackground(new java.awt.Color(255,153,153));
         speechflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
         speechflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        speechflash.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                speechflashMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                speechflashMouseExited(evt);
-            }
-        });
         speechflash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speechflashActionPerformed(evt);
@@ -112,12 +106,12 @@ public class GUI_flashcard extends javax.swing.JFrame {
         answer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         answer.setForeground(new java.awt.Color(102, 51, 0));
         answer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
+        answer.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                answerKeyPressed(evt);
+            }
+        });
         jPanel2.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 500, 70));
-
-        next.setBackground(new java.awt.Color(255,153,153));
-        next.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/next.png"))); // NOI18N
-        next.setBorder(null);
-        jPanel2.add(next, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 230, 110, 90));
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 1150, 340));
 
@@ -173,27 +167,14 @@ public class GUI_flashcard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     ImageIcon icon;
-    private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
-
-    }//GEN-LAST:event_speechflashMouseEntered
-
-    private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
-
-    }//GEN-LAST:event_speechflashMouseExited
-
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUI_Epg().setVisible(true);
+        new GUI_Home().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
-    private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
-        TextToSpeech tts = new TextToSpeech();
-        tts.speak((String) this.data.get(0).get(0));
-        this.answer.requestFocus();
-    }//GEN-LAST:event_speechflashActionPerformed
-
     private void checkflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkflashActionPerformed
-        if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
+        //System.out.println(((String) this.data.get(0).get(1)).trim());
+        if (this.answer.getText().trim().equals(((String) this.data.get(0).get(1)).trim())) {
             System.out.println("true");
             this.point++;
         } else {
@@ -206,11 +187,24 @@ public class GUI_flashcard extends javax.swing.JFrame {
         } else if (this.data.size() == 1) {
             this.answer.setEditable(false);
             setVisible(false);
-            new GUI_score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
+            new GUI_Score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
         }
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
         this.answer.setText(" ");
+        this.answer.requestFocus();
     }//GEN-LAST:event_checkflashActionPerformed
+
+    private void answerKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_answerKeyPressed
+        if (evt.getKeyCode() == 10) {
+            this.checkflashActionPerformed(null);
+        }
+    }//GEN-LAST:event_answerKeyPressed
+
+    private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak((String) this.data.get(0).get(0));
+        this.answer.requestFocus();
+    }//GEN-LAST:event_speechflashActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -225,7 +219,6 @@ public class GUI_flashcard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel keyword;
-    private javax.swing.JButton next;
     private javax.swing.JButton speechflash;
     // End of variables declaration//GEN-END:variables
 }

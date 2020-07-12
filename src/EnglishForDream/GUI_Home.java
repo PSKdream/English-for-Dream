@@ -21,10 +21,10 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUI_Epg extends javax.swing.JFrame {
+public class GUI_Home extends javax.swing.JFrame {
 
    
-    public GUI_Epg() {
+    public GUI_Home() {
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -145,22 +145,22 @@ public class GUI_Epg extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void gotoflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoflashActionPerformed
-       new GUI_flashcard().setVisible(true);
+       new GUI_Flashcard().setVisible(true);
         setVisible(false);        
     }//GEN-LAST:event_gotoflashActionPerformed
 
     private void gotolisteningActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotolisteningActionPerformed
-        new GUI_texttospeech().setVisible(true);
+        new GUI_Listening().setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_gotolisteningActionPerformed
 
     private void gotoaddwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoaddwordActionPerformed
-        new GUI_ADDvocabtodata().setVisible(true);
+        new GUI_Translate().setVisible(true);
         setVisible(false);    
     }//GEN-LAST:event_gotoaddwordActionPerformed
 
     private void gotoworddataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gotoworddataActionPerformed
-        new GUI_vocabdata().setVisible(true);
+        new GUI_VocabData().setVisible(true);
         setVisible(false);  
     }//GEN-LAST:event_gotoworddataActionPerformed
 
@@ -199,7 +199,7 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
-                new GUI_Epg().setVisible(true);
+                new GUI_Home().setVisible(true);
                 
             }
         });

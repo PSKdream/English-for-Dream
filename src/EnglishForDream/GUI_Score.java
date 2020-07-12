@@ -11,12 +11,12 @@ import java.util.ArrayList;
  *
  * @author ptmna
  */
-public class GUI_score extends javax.swing.JFrame {
+public class GUI_Score extends javax.swing.JFrame {
 
     /**
      * Creates new form GUI_score
      */
-   public GUI_score(ArrayList<ArrayList<Object>> wrongAns, String point) {
+   public GUI_Score(ArrayList<ArrayList<Object>> wrongAns, String point) {
         setUndecorated(true); 
         initComponents();
         System.out.println("result: "+isUndecorated());      
@@ -106,7 +106,7 @@ public class GUI_score extends javax.swing.JFrame {
 
     private void ToMainMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ToMainMenuActionPerformed
         setVisible(false);
-        new GUI_Epg().setVisible(true);
+        new GUI_Home().setVisible(true);
     }//GEN-LAST:event_ToMainMenuActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed

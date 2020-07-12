@@ -17,11 +17,11 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ptmna
  */
-public class GUI_vocabdata extends javax.swing.JFrame {
+public class GUI_VocabData extends javax.swing.JFrame {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
 
-    public GUI_vocabdata() {
+    public GUI_VocabData() {
 
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -140,7 +140,7 @@ public class GUI_vocabdata extends javax.swing.JFrame {
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
-        new GUI_Epg().setVisible(true);
+        new GUI_Home().setVisible(true);
     }//GEN-LAST:event_backActionPerformed
 
     private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
