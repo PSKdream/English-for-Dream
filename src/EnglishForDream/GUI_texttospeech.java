@@ -181,7 +181,7 @@ public class GUI_texttospeech extends javax.swing.JFrame {
         //System.out.println(this.jTextField1.getText());
         //System.out.println((String)this.dataNow.get(1));
         //System.out.println(data.get(0).get(0));
-        if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
+        if (this.answer.getText().trim().equals((String) this.data.get(0).get(0))) {
             System.out.println("true");
             this.point++;
         } else {

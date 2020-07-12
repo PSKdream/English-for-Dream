@@ -58,7 +58,17 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        addTextToData.setBackground(new java.awt.Color(255,153,153));
+        addTextToData.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/save.png"))); // NOI18N
         addTextToData.setBorder(null);
+        addTextToData.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addTextToDataMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addTextToDataMouseExited(evt);
+            }
+        });
         addTextToData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addTextToDataActionPerformed(evt);
@@ -111,7 +121,7 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fonttranslate.png"))); // NOI18N
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, 330, 60));
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 330, 60));
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
@@ -124,16 +134,19 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
                 wordFieldActionPerformed(evt);
             }
         });
-        jPanel3.add(wordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 430, 70));
+        jPanel3.add(wordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 430, 70));
 
         translatedArea.setEditable(false);
+        translatedArea.setBackground(new java.awt.Color(255, 255, 204));
         translatedArea.setColumns(20);
         translatedArea.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        translatedArea.setForeground(new java.awt.Color(52, 14, 14));
         translatedArea.setLineWrap(true);
         translatedArea.setRows(5);
+        translatedArea.setBorder(null);
         jScrollPane1.setViewportView(translatedArea);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 430, 140));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 620, 130));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,7 +156,7 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -188,6 +201,14 @@ public class GUI_ADDvocabtodata extends javax.swing.JFrame {
         this.translatedArea.setText(text);
 
     }//GEN-LAST:event_translate1ActionPerformed
+
+    private void addTextToDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTextToDataMouseEntered
+      setMouseEntered_Exited(addTextToData, "savemouseover");
+    }//GEN-LAST:event_addTextToDataMouseEntered
+
+    private void addTextToDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTextToDataMouseExited
+       setMouseEntered_Exited(addTextToData, "save");
+    }//GEN-LAST:event_addTextToDataMouseExited
     public void setMouseEntered_Exited(JButton a, String Imagefile) {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);

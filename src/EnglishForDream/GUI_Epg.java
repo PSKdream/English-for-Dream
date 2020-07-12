@@ -6,7 +6,10 @@
 package EnglishForDream;
 
 import Database.Database ;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -136,6 +139,8 @@ public class GUI_Epg extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        CustomCursor();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -181,12 +186,21 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
     /**
      * @param args the command line arguments
      */
+    public void CustomCursor(){
+         Toolkit tool = Toolkit.getDefaultToolkit();
+         Image img = tool.getImage("src/EnglishForDream/cursor.png");
+         Point point = new Point(0,0);
+         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
+         setCursor(cursor);
+         }
+    
     public static void main(String args[]) {
       
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {
                 new GUI_Epg().setVisible(true);
+                
             }
         });
         
@@ -194,8 +208,7 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
         db.connect();
         ArrayList <Object> data = db.select.getRow("vocab","Dream"); //retrun ArrayList type Object
         db.close();*/
-         
-    
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
