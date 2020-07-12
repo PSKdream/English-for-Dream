@@ -5,26 +5,45 @@
  */
 package EnglishForDream;
 
+import Database.Database;
+import TranslateTTS.TextToSpeech;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
-
-
-
- /**
+/**
  *
  * @author ptmna
  */
 public class GUI_flashcard extends javax.swing.JFrame {
 
-   
+    ArrayList<ArrayList<Object>> data = new ArrayList();
+    ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
+    int point = 0;
+    int choice_total;
+
     public GUI_flashcard() {
-   
+
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
-        setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        this.randVocab();
+        this.choice_total = this.data.size();
+        this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
+        this.showVocab();
+    }
+
+    public void randVocab() {
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
+        db.close();
+    }
+
+    public void showVocab() {
+        keyword.setText((String) this.data.get(0).get(0));
     }
 
     /**
@@ -44,13 +63,14 @@ public class GUI_flashcard extends javax.swing.JFrame {
         next = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         keyword = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        choiceNum = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1150, 720));
         setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
@@ -64,6 +84,11 @@ public class GUI_flashcard extends javax.swing.JFrame {
         checkflash.setBackground(new java.awt.Color(255,153,153));
         checkflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/checkfbt.png"))); // NOI18N
         checkflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        checkflash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkflashActionPerformed(evt);
+            }
+        });
         jPanel2.add(checkflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 190, 160));
 
         speechflash.setBackground(new java.awt.Color(255,153,153));
@@ -86,7 +111,6 @@ public class GUI_flashcard extends javax.swing.JFrame {
 
         answer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         answer.setForeground(new java.awt.Color(102, 51, 0));
-        answer.setText("Answer");
         answer.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(79, 39, 0), 7, true));
         jPanel2.add(answer, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 40, 500, 70));
 
@@ -112,15 +136,13 @@ public class GUI_flashcard extends javax.swing.JFrame {
         });
         jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontflashcard.png"))); // NOI18N
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
-
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         keyword.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
         keyword.setForeground(new java.awt.Color(102, 51, 0));
+        keyword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         keyword.setText("Resistor");
-        jPanel3.add(keyword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 420, 120));
+        jPanel3.add(keyword, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 180, 390, 120));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/paw.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
@@ -131,6 +153,11 @@ public class GUI_flashcard extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/gifbrownbear.gif"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 260));
+
+        choiceNum.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        choiceNum.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        choiceNum.setText("jLabel5");
+        jPanel3.add(choiceNum, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 340, 360, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,11 +174,11 @@ public class GUI_flashcard extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     ImageIcon icon;
     private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
-       
+
     }//GEN-LAST:event_speechflashMouseEntered
 
     private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
-    
+
     }//GEN-LAST:event_speechflashMouseExited
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -160,18 +187,40 @@ public class GUI_flashcard extends javax.swing.JFrame {
     }//GEN-LAST:event_backActionPerformed
 
     private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
-        // TODO add your handling code here:
+        TextToSpeech tts = new TextToSpeech();
+        tts.speak((String) this.data.get(0).get(0));
+        this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
+
+    private void checkflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkflashActionPerformed
+        if (this.answer.getText().trim().equals((String) this.data.get(0).get(1))) {
+            System.out.println("true");
+            this.point++;
+        } else {
+            this.wrongAns.add(this.data.get(0));
+        }
+        
+        if (this.data.size()>1) {
+            this.data.remove(0);
+            this.showVocab();
+        } else if (this.data.size() == 1) {
+            this.answer.setEditable(false);
+            setVisible(false);
+            new GUI_score(this.wrongAns,this.point+"/"+this.choice_total).setVisible(true);
+        }
+        this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
+        this.answer.setText(" ");
+    }//GEN-LAST:event_checkflashActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer;
     private javax.swing.JButton back;
     private javax.swing.JButton checkflash;
+    private javax.swing.JLabel choiceNum;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
