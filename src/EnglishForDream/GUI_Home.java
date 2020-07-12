@@ -179,20 +179,17 @@ public class GUI_Home extends javax.swing.JFrame {
     private void gotolisteningMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseExited
         setMouseEntered_Exited(gotolistening,"btR");
     }//GEN-LAST:event_gotolisteningMouseExited
-public void setMouseEntered_Exited(JButton a,String Imagefile){
+    private void setMouseEntered_Exited(JButton a,String Imagefile){
         ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
         a.setIcon(icon);
     }
-    /**
-     * @param args the command line arguments
-     */
-    public void CustomCursor(){
+    private void CustomCursor(){
          Toolkit tool = Toolkit.getDefaultToolkit();
          Image img = tool.getImage("src/EnglishForDream/cursor.png");
          Point point = new Point(0,0);
          Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
          setCursor(cursor);
-         }
+    }
     
     public static void main(String args[]) {
       
@@ -203,11 +200,6 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
                 
             }
         });
-        
-      /*  Database db = new Database("jdbc:sqlite:data.db");
-        db.connect();
-        ArrayList <Object> data = db.select.getRow("vocab","Dream"); //retrun ArrayList type Object
-        db.close();*/
         
     }
 

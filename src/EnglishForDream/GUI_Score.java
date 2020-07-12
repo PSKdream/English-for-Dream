@@ -113,9 +113,6 @@ public class GUI_Score extends javax.swing.JFrame {
         System.exit(1);
     }//GEN-LAST:event_exitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

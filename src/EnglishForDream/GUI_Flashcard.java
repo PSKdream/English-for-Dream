@@ -18,10 +18,11 @@ import javax.swing.ImageIcon;
  */
 public class GUI_Flashcard extends javax.swing.JFrame {
 
-    ArrayList<ArrayList<Object>> data = new ArrayList();
-    ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
-    int point = 0;
-    int choice_total;
+    private ArrayList<ArrayList<Object>> data = new ArrayList();
+    private ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
+    private int point = 0;
+    private int choice_total;
+    private ImageIcon icon;
 
     public GUI_Flashcard() {
 
@@ -38,14 +39,14 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         this.answer.setText(" ");
     }
 
-    public void randVocab() {
+    private void randVocab() {
         Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
         db.close();
     }
 
-    public void showVocab() {
+    private void showVocab() {
         keyword.setText((String) this.data.get(0).get(0));
     }
 
@@ -166,7 +167,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    ImageIcon icon;
+    
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
         new GUI_Home().setVisible(true);

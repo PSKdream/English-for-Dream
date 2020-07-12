@@ -15,8 +15,6 @@ import javax.net.ssl.HttpsURLConnection;
 public class Translate {
 
     private String key;
-    public Translate(){
-    }
 
     public Translate(String apiKey) {
         key = apiKey;
