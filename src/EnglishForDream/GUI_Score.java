@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package EnglishForDream;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 /**
@@ -57,49 +60,55 @@ public class GUI_Score extends javax.swing.JFrame {
         jLabel1.setText("Wrong word : ");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 40));
 
-        ToMainMenu.setText("Main Menu");
+        ToMainMenu.setBackground(new java.awt.Color(255,153,153));
+        ToMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/munuu.png"))); // NOI18N
+        ToMainMenu.setBorder(null);
         ToMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToMainMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(ToMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 100, 70));
+        jPanel1.add(ToMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 100, 80));
 
-        exit.setText("Exit");
+        exit.setBackground(new java.awt.Color(255,153,153));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/exit.png"))); // NOI18N
+        exit.setBorder(null);
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 100, 70));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 100, 80));
 
         scoreText.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         scoreText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreText.setText("Your Score");
-        jPanel1.add(scoreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, 50));
+        jPanel1.add(scoreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 270, 50));
 
         wrongWordArea.setEditable(false);
+        wrongWordArea.setBackground(new java.awt.Color(255, 204, 204));
         wrongWordArea.setColumns(20);
         wrongWordArea.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         wrongWordArea.setRows(5);
+        wrongWordArea.setBorder(null);
         jScrollPane1.setViewportView(wrongWordArea);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 270, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 280, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,7 +121,13 @@ public class GUI_Score extends javax.swing.JFrame {
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
         System.exit(1);
     }//GEN-LAST:event_exitActionPerformed
-
+     private void CustomCursor(){
+         Toolkit tool = Toolkit.getDefaultToolkit();
+         Image img = tool.getImage("src/EnglishForDream/cursor.png");
+         Point point = new Point(0,0);
+         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
+         setCursor(cursor);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

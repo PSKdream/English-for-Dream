@@ -7,7 +7,10 @@ package EnglishForDream;
 
 import Database.Database;
 import TranslateTTS.TextToSpeech;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -66,6 +69,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         answer = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         keyword = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -131,6 +135,9 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         });
         jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontflashcard.png"))); // NOI18N
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 330, 80));
+
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         keyword.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
@@ -164,6 +171,8 @@ public class GUI_Flashcard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 709, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -206,7 +215,13 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         tts.speak((String) this.data.get(0).get(0));
         this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
-
+      private void CustomCursor(){
+         Toolkit tool = Toolkit.getDefaultToolkit();
+         Image img = tool.getImage("src/EnglishForDream/cursor.png");
+         Point point = new Point(0,0);
+         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
+         setCursor(cursor);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer;
@@ -216,6 +231,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;

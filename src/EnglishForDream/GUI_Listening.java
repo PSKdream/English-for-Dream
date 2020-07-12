@@ -10,6 +10,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import TranslateTTS.TextToSpeech;
+import java.awt.Cursor;
+import java.awt.Image;
+import java.awt.Point;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -163,6 +166,8 @@ public class GUI_Listening extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        CustomCursor();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -221,7 +226,13 @@ public class GUI_Listening extends javax.swing.JFrame {
     private void Exit() {
         setVisible(false);
     }
-
+    private void CustomCursor(){
+         Toolkit tool = Toolkit.getDefaultToolkit();
+         Image img = tool.getImage("src/EnglishForDream/cursor.png");
+         Point point = new Point(0,0);
+         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
+         setCursor(cursor);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer;
     private javax.swing.JButton back;

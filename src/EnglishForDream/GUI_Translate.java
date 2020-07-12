@@ -11,6 +11,9 @@ import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import TranslateTTS.*;
+import java.awt.Cursor;
+import java.awt.Image;
+import java.awt.Point;
 
 /**
  *
@@ -46,6 +49,7 @@ public class GUI_Translate extends javax.swing.JFrame {
         wordField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         translatedArea = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -146,7 +150,12 @@ public class GUI_Translate extends javax.swing.JFrame {
         translatedArea.setBorder(null);
         jScrollPane1.setViewportView(translatedArea);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 620, 130));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 620, 130));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 0, 0));
+        jLabel2.setText("English to Thai");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 250, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +167,8 @@ public class GUI_Translate extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -213,11 +224,18 @@ public class GUI_Translate extends javax.swing.JFrame {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);
     }
-
+     private void CustomCursor(){
+         Toolkit tool = Toolkit.getDefaultToolkit();
+         Image img = tool.getImage("src/EnglishForDream/cursor.png");
+         Point point = new Point(0,0);
+         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
+         setCursor(cursor);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addTextToData;
     private javax.swing.JButton back;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
