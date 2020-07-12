@@ -61,6 +61,26 @@ public static void main(String[] args) {
     }
 }
 ```
+#### Select Query
+```java
+public static void main(String[] args) {
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        ArrayList <Object> data = db.select.query("SQL Command"); //retrun ArrayList type Object
+        db.close();
+    }
+}
+```
+#### Delete
+```java
+public static void main(String[] args) {
+        Database db = new Database("jdbc:sqlite:data.db");
+        db.connect();
+        db.delete.delete("text"); //delete WHERE vocab
+        db.close();
+    }
+}
+```
 
 
 ## Translate
