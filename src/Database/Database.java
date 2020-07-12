@@ -19,8 +19,8 @@ import Database.Insert;
  */
 public class Database {
 
-    protected String url;
-    protected Connection c = null;
+    private String url;
+    private Connection c = null;
     
     public Insert insert = null;
     public Select select = null;

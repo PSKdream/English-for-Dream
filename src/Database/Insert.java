@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Insert {
     
-    Connection c = null;
+    private Connection c = null;
     Insert(Connection c){
         this.c = c;
     }

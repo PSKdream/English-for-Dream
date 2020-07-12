@@ -14,7 +14,7 @@ import java.sql.PreparedStatement;
  */
 public class Delete {
 
-    Connection c = null;
+    private Connection c = null;
 
     Delete(Connection c) {
         this.c = c;

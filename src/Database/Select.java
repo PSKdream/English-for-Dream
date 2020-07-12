@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Select  {
     
-    Connection c = null;
+    private Connection c = null;
     Select(Connection c){
         this.c=c;
     }
