@@ -5,13 +5,8 @@
  */
 package EnglishForDream;
 
-import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.Toolkit;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 
 
@@ -19,7 +14,7 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUI_Home extends javax.swing.JFrame {
+public class GUI_Home extends Gui_control {
 
    
     public GUI_Home() {
@@ -27,6 +22,8 @@ public class GUI_Home extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        
+        super.CustomCursor();
     }
 
     /**
@@ -137,8 +134,6 @@ public class GUI_Home extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        CustomCursor();
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -177,17 +172,7 @@ public class GUI_Home extends javax.swing.JFrame {
     private void gotolisteningMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseExited
         setMouseEntered_Exited(gotolistening,"btR");
     }//GEN-LAST:event_gotolisteningMouseExited
-    private void setMouseEntered_Exited(JButton a,String Imagefile){
-        ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
-        a.setIcon(icon);
-    }
-    private void CustomCursor(){
-         Toolkit tool = Toolkit.getDefaultToolkit();
-         Image img = tool.getImage("src/EnglishForDream/cursor.png");
-         Point point = new Point(0,0);
-         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
-         setCursor(cursor);
-    }
+
     
     public static void main(String args[]) {
       

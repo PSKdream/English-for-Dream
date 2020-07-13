@@ -10,14 +10,12 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import TranslateTTS.TextToSpeech;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 /**
  *
  * @author ptmna
  */
-public class GUI_Listening extends javax.swing.JFrame {
+public class GUI_Listening extends Gui_control {
 
     private ArrayList<ArrayList<Object>> data = new ArrayList();
     private ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
@@ -34,6 +32,7 @@ public class GUI_Listening extends javax.swing.JFrame {
         this.randVocab();
         this.choice_total = this.data.size();
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
+        super.CustomCursor();
     }
 
     private void randVocab() {
@@ -214,10 +213,7 @@ public class GUI_Listening extends javax.swing.JFrame {
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
         setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
-    private void setMouseEntered_Exited(JButton a, String Imagefile) {
-        ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
-        a.setIcon(icon);
-    }
+
     private void Exit() {
         setVisible(false);
     }

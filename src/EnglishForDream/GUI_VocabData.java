@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author ptmna
  */
-public class GUI_VocabData extends javax.swing.JFrame {
+public class GUI_VocabData extends Gui_control {
 
     ArrayList<ArrayList<Object>> data = new ArrayList();
 
@@ -33,13 +33,13 @@ public class GUI_VocabData extends javax.swing.JFrame {
         this.data = db.select.getTable(); //retrun ArrayList type Object
         db.close();
 
-        
         DefaultTableModel model = (DefaultTableModel) this.tableData.getModel();
-        for (int i = 0; i <  this.data.size(); i++) {
+        for (int i = 0; i < this.data.size(); i++) {
             model.addRow(new Object[0]);
             model.setValueAt(this.data.get(i).get(1), i, 0);
             model.setValueAt(this.data.get(i).get(2), i, 1);
         }
+        super.CustomCursor();
     }
 
     /**
@@ -145,26 +145,26 @@ public class GUI_VocabData extends javax.swing.JFrame {
 
     private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
         if (evt.getClickCount() == 2) {
-           // JTable target = new JTable();
-            JTable target = (JTable)evt.getSource();
-               int row = target.getSelectedRow(); // select a row
-              TextToSpeech tts = new TextToSpeech();
-              tts.speak((String) this.tableData.getValueAt(row, 0));
+            // JTable target = new JTable();
+            JTable target = (JTable) evt.getSource();
+            int row = target.getSelectedRow(); // select a row
+            TextToSpeech tts = new TextToSpeech();
+            tts.speak((String) this.tableData.getValueAt(row, 0));
         }
     }//GEN-LAST:event_tableDataMouseClicked
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
         Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
-        int count =  this.tableData.getSelectedRows().length;
+        int count = this.tableData.getSelectedRows().length;
         System.out.println(this.tableData.getSelectedRows());
         for (int i = 0; i < count; i++) {
-            String text = (String)this.tableData.getValueAt(this.tableData.getSelectedRows()[i], 0);
+            String text = (String) this.tableData.getValueAt(this.tableData.getSelectedRows()[i], 0);
             System.out.println(text);
             db.delete.delete(text);
         }
-        for (int i = count-1; i >= 0; i--) {
-            ((DefaultTableModel)this.tableData.getModel()).removeRow(this.tableData.getSelectedRows()[i]);
+        for (int i = count - 1; i >= 0; i--) {
+            ((DefaultTableModel) this.tableData.getModel()).removeRow(this.tableData.getSelectedRows()[i]);
         }
         db.close();
     }//GEN-LAST:event_DeleteActionPerformed

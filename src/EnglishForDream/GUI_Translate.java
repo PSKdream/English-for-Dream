@@ -16,7 +16,7 @@ import TranslateTTS.*;
  *
  * @author ptmna
  */
-public class GUI_Translate extends javax.swing.JFrame {
+public class GUI_Translate extends Gui_control {
 
     public GUI_Translate() {
 
@@ -24,6 +24,7 @@ public class GUI_Translate extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        super.CustomCursor();
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author ptmna
  */
-public class GUI_Score extends javax.swing.JFrame {
+public class GUI_Score extends Gui_control {
 
     /**
      * Creates new form GUI_score
@@ -29,6 +29,7 @@ public class GUI_Score extends javax.swing.JFrame {
         }
         this.wrongWordArea.setText(text);
         this.scoreText.setText("Your Score: " + point);
+        super.CustomCursor();
     }
 
     /**

@@ -12,11 +12,12 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 
+
 /**
  *
  * @author ptmna
  */
-public class GUI_Flashcard extends javax.swing.JFrame {
+public class GUI_Flashcard extends Gui_control {
 
     private ArrayList<ArrayList<Object>> data = new ArrayList();
     private ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
@@ -25,7 +26,6 @@ public class GUI_Flashcard extends javax.swing.JFrame {
     private ImageIcon icon;
 
     public GUI_Flashcard() {
-
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -37,6 +37,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         
         this.answer.requestFocus();
         this.answer.setText(" ");
+        super.CustomCursor();
     }
 
     private void randVocab() {
@@ -206,6 +207,8 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         tts.speak((String) this.data.get(0).get(0));
         this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
+
+    
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
