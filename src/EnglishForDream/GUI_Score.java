@@ -56,9 +56,10 @@ public class GUI_Score extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 0));
         jLabel1.setText("Wrong word : ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 40));
 
         ToMainMenu.setBackground(new java.awt.Color(255,153,153));
         ToMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/munuu.png"))); // NOI18N
@@ -80,10 +81,11 @@ public class GUI_Score extends javax.swing.JFrame {
         });
         jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 100, 80));
 
-        scoreText.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        scoreText.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        scoreText.setForeground(new java.awt.Color(51, 0, 0));
         scoreText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreText.setText("Your Score");
-        jPanel1.add(scoreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 270, 50));
+        jPanel1.add(scoreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, 50));
 
         wrongWordArea.setEditable(false);
         wrongWordArea.setBackground(new java.awt.Color(255, 204, 204));

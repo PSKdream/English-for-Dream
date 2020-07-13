@@ -172,7 +172,8 @@ public class GUI_Flashcard extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 709, Short.MAX_VALUE)
         );
 
-        CustomCursor();
+        GUI_Home home = new GUI_Home();
+        home.CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -215,13 +216,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         tts.speak((String) this.data.get(0).get(0));
         this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
-      private void CustomCursor(){
-         Toolkit tool = Toolkit.getDefaultToolkit();
-         Image img = tool.getImage("src/EnglishForDream/cursor.png");
-         Point point = new Point(0,0);
-         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
-         setCursor(cursor);
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer;

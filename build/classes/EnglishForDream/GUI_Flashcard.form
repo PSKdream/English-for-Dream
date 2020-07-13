@@ -47,7 +47,7 @@
         </Property>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="CustomCursor();"/>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="GUI_Home home = new GUI_Home();&#xa;home.CustomCursor();"/>
       </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
