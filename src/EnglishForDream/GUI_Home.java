@@ -132,7 +132,7 @@ public class GUI_Home extends javax.swing.JFrame {
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/dream.png"))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 210, 170));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 210, 170));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
