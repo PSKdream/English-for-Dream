@@ -7,9 +7,14 @@ package EnglishForDream;
 
 import Database.Database;
 import TranslateTTS.TextToSpeech;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -55,6 +60,7 @@ public class GUI_VocabData extends Gui_control {
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         ScrollPane = new javax.swing.JScrollPane();
         tableData = new javax.swing.JTable();
         Delete = new javax.swing.JButton();
@@ -86,10 +92,13 @@ public class GUI_VocabData extends Gui_control {
         });
         jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontvocabu.png"))); // NOI18N
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 0, 380, 80));
+
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         tableData.setBackground(new java.awt.Color(225,205,158));
-        tableData.setFont(new java.awt.Font("TH SarabunPSK", 0, 18)); // NOI18N
+        tableData.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
         tableData.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -106,7 +115,10 @@ public class GUI_VocabData extends Gui_control {
                 return canEdit [columnIndex];
             }
         });
-        tableData.setGridColor(new java.awt.Color(240, 240, 240));
+        tableData.setAlignmentX(0.0F);
+        tableData.setAlignmentY(0.0F);
+        tableData.setGridColor(new java.awt.Color(255, 255, 255));
+        tableData.setRowHeight(30);
         tableData.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tableDataMouseClicked(evt);
@@ -114,15 +126,24 @@ public class GUI_VocabData extends Gui_control {
         });
         ScrollPane.setViewportView(tableData);
 
-        jPanel3.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 940, 440));
+        jPanel3.add(ScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 890, 580));
 
-        Delete.setText("Delete");
+        Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/trash.png"))); // NOI18N
+        Delete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DeleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DeleteMouseExited(evt);
+            }
+        });
         Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DeleteActionPerformed(evt);
             }
         });
-        jPanel3.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 580, 170, 50));
+        jPanel3.add(Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 560, 110, 90));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,6 +155,8 @@ public class GUI_VocabData extends Gui_control {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -169,11 +192,19 @@ public class GUI_VocabData extends Gui_control {
         db.close();
     }//GEN-LAST:event_DeleteActionPerformed
 
+    private void DeleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseEntered
+        setMouseEntered_Exited(Delete,"trashmouseover");
+    }//GEN-LAST:event_DeleteMouseEntered
+
+    private void DeleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteMouseExited
+         setMouseEntered_Exited(Delete,"trash");
+    }//GEN-LAST:event_DeleteMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Delete;
     private javax.swing.JScrollPane ScrollPane;
     private javax.swing.JButton back;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;

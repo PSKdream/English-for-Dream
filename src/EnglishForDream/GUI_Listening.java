@@ -11,6 +11,7 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import TranslateTTS.TextToSpeech;
 
+
 /**
  *
  * @author ptmna
@@ -161,6 +162,8 @@ public class GUI_Listening extends Gui_control {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
