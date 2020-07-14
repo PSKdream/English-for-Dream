@@ -10,19 +10,18 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import TranslateTTS.TextToSpeech;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+
 
 /**
  *
  * @author ptmna
  */
-public class GUI_Listening extends javax.swing.JFrame {
+public class GUI_Listening extends Gui_control {
 
-    ArrayList<ArrayList<Object>> data = new ArrayList();
-    ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
-    int point = 0;
-    int choice_total;
+    private ArrayList<ArrayList<Object>> data = new ArrayList();
+    private ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
+    private int point = 0;
+    private int choice_total;
 
     public GUI_Listening() {
         initComponents();
@@ -34,9 +33,10 @@ public class GUI_Listening extends javax.swing.JFrame {
         this.randVocab();
         this.choice_total = this.data.size();
         this.choiceNum.setText((this.choice_total - this.data.size() + 1) + " out of " + this.choice_total);
+        super.CustomCursor();
     }
 
-    public void randVocab() {
+    private void randVocab() {
         Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
@@ -163,6 +163,8 @@ public class GUI_Listening extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        CustomCursor();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -214,11 +216,8 @@ public class GUI_Listening extends javax.swing.JFrame {
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
         setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
-    public void setMouseEntered_Exited(JButton a, String Imagefile) {
-        ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
-        a.setIcon(icon);
-    }
-    public void Exit() {
+
+    private void Exit() {
         setVisible(false);
     }
 

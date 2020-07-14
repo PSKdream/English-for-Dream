@@ -5,15 +5,8 @@
  */
 package EnglishForDream;
 
-import Database.Database ;
-import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.Toolkit;
-import java.util.ArrayList;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
 
 
@@ -21,7 +14,7 @@ import javax.swing.JButton;
  *
  * @author ptmna
  */
-public class GUI_Home extends javax.swing.JFrame {
+public class GUI_Home extends Gui_control {
 
    
     public GUI_Home() {
@@ -29,6 +22,8 @@ public class GUI_Home extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2,size.height/2-getHeight()/2);
+        
+        super.CustomCursor();
     }
 
     /**
@@ -47,6 +42,8 @@ public class GUI_Home extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         gotoaddword = new javax.swing.JButton();
         gotoworddata = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -107,7 +104,7 @@ public class GUI_Home extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         gotoaddword.setBackground(new java.awt.Color(255,153,153));
-        gotoaddword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/Plus.png"))); // NOI18N
+        gotoaddword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/logatranslate.png"))); // NOI18N
         gotoaddword.setBorder(null);
         gotoaddword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +114,7 @@ public class GUI_Home extends javax.swing.JFrame {
         jPanel5.add(gotoaddword, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 0, 90, 80));
 
         gotoworddata.setBackground(new java.awt.Color(255,153,153));
-        gotoworddata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocab.png"))); // NOI18N
+        gotoworddata.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/vocabdata.png"))); // NOI18N
         gotoworddata.setBorder(null);
         gotoworddata.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,18 +125,22 @@ public class GUI_Home extends javax.swing.JFrame {
 
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontengfordream.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/dream.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 210, 170));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1150, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
-
-        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -179,20 +180,6 @@ public class GUI_Home extends javax.swing.JFrame {
     private void gotolisteningMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseExited
         setMouseEntered_Exited(gotolistening,"btR");
     }//GEN-LAST:event_gotolisteningMouseExited
-public void setMouseEntered_Exited(JButton a,String Imagefile){
-        ImageIcon icon = new ImageIcon("src/EnglishForDream/"+Imagefile+".png");
-        a.setIcon(icon);
-    }
-    /**
-     * @param args the command line arguments
-     */
-    public void CustomCursor(){
-         Toolkit tool = Toolkit.getDefaultToolkit();
-         Image img = tool.getImage("src/EnglishForDream/cursor.png");
-         Point point = new Point(0,0);
-         Cursor cursor = tool.createCustomCursor(img, point, "src/EnglishForDream/cursor.png");
-         setCursor(cursor);
-         }
     
     public static void main(String args[]) {
       
@@ -204,11 +191,6 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
             }
         });
         
-      /*  Database db = new Database("jdbc:sqlite:data.db");
-        db.connect();
-        ArrayList <Object> data = db.select.getRow("vocab","Dream"); //retrun ArrayList type Object
-        db.close();*/
-        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -216,6 +198,8 @@ public void setMouseEntered_Exited(JButton a,String Imagefile){
     javax.swing.JButton gotoflash;
     javax.swing.JButton gotolistening;
     javax.swing.JButton gotoworddata;
+    javax.swing.JLabel jLabel1;
+    javax.swing.JLabel jLabel2;
     javax.swing.JPanel jPanel2;
     javax.swing.JPanel jPanel3;
     javax.swing.JPanel jPanel5;

@@ -4,14 +4,17 @@
  * and open the template in the editor.
  */
 package EnglishForDream;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 /**
  *
  * @author ptmna
  */
-public class GUI_Score extends javax.swing.JFrame {
+public class GUI_Score extends Gui_control {
 
     /**
      * Creates new form GUI_score
@@ -29,6 +32,7 @@ public class GUI_Score extends javax.swing.JFrame {
         }
         this.wrongWordArea.setText(text);
         this.scoreText.setText("Your Score: " + point);
+        super.CustomCursor();
     }
 
     /**
@@ -53,53 +57,61 @@ public class GUI_Score extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Angsana New", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 0, 0));
         jLabel1.setText("Wrong word : ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 370, 40));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 110, 40));
 
-        ToMainMenu.setText("Main Menu");
+        ToMainMenu.setBackground(new java.awt.Color(255,153,153));
+        ToMainMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/munuu.png"))); // NOI18N
+        ToMainMenu.setBorder(null);
         ToMainMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ToMainMenuActionPerformed(evt);
             }
         });
-        jPanel1.add(ToMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 100, 70));
+        jPanel1.add(ToMainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, 100, 80));
 
-        exit.setText("Exit");
+        exit.setBackground(new java.awt.Color(255,153,153));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/exit.png"))); // NOI18N
+        exit.setBorder(null);
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
-        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 100, 70));
+        jPanel1.add(exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 100, 80));
 
-        scoreText.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        scoreText.setFont(new java.awt.Font("Angsana New", 1, 36)); // NOI18N
+        scoreText.setForeground(new java.awt.Color(51, 0, 0));
         scoreText.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         scoreText.setText("Your Score");
         jPanel1.add(scoreText, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 270, 50));
 
         wrongWordArea.setEditable(false);
+        wrongWordArea.setBackground(new java.awt.Color(255, 204, 204));
         wrongWordArea.setColumns(20);
         wrongWordArea.setFont(new java.awt.Font("Monospaced", 0, 16)); // NOI18N
         wrongWordArea.setRows(5);
+        wrongWordArea.setBorder(null);
         jScrollPane1.setViewportView(wrongWordArea);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 270, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 280, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 444, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -113,9 +125,6 @@ public class GUI_Score extends javax.swing.JFrame {
         System.exit(1);
     }//GEN-LAST:event_exitActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

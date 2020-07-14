@@ -7,24 +7,28 @@ package EnglishForDream;
 
 import Database.Database;
 import TranslateTTS.TextToSpeech;
+import java.awt.Cursor;
 import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+
 
 /**
  *
  * @author ptmna
  */
-public class GUI_Flashcard extends javax.swing.JFrame {
+public class GUI_Flashcard extends Gui_control {
 
-    ArrayList<ArrayList<Object>> data = new ArrayList();
-    ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
-    int point = 0;
-    int choice_total;
+    private ArrayList<ArrayList<Object>> data = new ArrayList();
+    private ArrayList<ArrayList<Object>> wrongAns = new ArrayList();
+    private int point = 0;
+    private int choice_total;
+    private ImageIcon icon;
 
     public GUI_Flashcard() {
-
         initComponents();
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
@@ -36,16 +40,17 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         
         this.answer.requestFocus();
         this.answer.setText(" ");
+        super.CustomCursor();
     }
 
-    public void randVocab() {
+    private void randVocab() {
         Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
         db.close();
     }
 
-    public void showVocab() {
+    private void showVocab() {
         keyword.setText((String) this.data.get(0).get(0));
     }
 
@@ -65,6 +70,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         answer = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         keyword = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -130,6 +136,9 @@ public class GUI_Flashcard extends javax.swing.JFrame {
         });
         jPanel5.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontflashcard.png"))); // NOI18N
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 0, 330, 80));
+
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         keyword.setFont(new java.awt.Font("Times New Roman", 0, 48)); // NOI18N
@@ -164,9 +173,12 @@ public class GUI_Flashcard extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 709, Short.MAX_VALUE)
         );
 
+        GUI_Home home = new GUI_Home();
+        home.CustomCursor();
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    ImageIcon icon;
+    
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         setVisible(false);
         new GUI_Home().setVisible(true);
@@ -215,6 +227,7 @@ public class GUI_Flashcard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
