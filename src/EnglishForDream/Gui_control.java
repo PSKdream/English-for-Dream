@@ -16,7 +16,7 @@ import javax.swing.JButton;
  *
  * @author dram-
  */
-class Gui_control extends javax.swing.JFrame implements Interface {
+class Gui_control extends javax.swing.JFrame implements GUI_Interface {
     @Override
     public void CustomCursor(){
          Toolkit tool = Toolkit.getDefaultToolkit();

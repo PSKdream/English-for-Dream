@@ -217,10 +217,7 @@ public class GUI_Listening extends Gui_control {
         setMouseEntered_Exited(speech, "speechbt");
     }//GEN-LAST:event_speechMouseExited
 
-    private void Exit() {
-        setVisible(false);
-    }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField answer;
     private javax.swing.JButton back;
