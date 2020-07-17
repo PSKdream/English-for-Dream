@@ -122,7 +122,7 @@ public class GUI_Score extends Gui_control {
     }//GEN-LAST:event_ToMainMenuActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
-        System.exit(1);
+        System.exit(0);
     }//GEN-LAST:event_exitActionPerformed
 
     
