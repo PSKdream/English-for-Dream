@@ -11,7 +11,7 @@ import javax.swing.JButton;
  *
  * @author dram-
  */
-interface Interface  {
+interface GUI_Interface  {
     abstract void CustomCursor();
     abstract void setMouseEntered_Exited(JButton a,String Imagefile);
 }
