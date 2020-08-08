@@ -5,12 +5,7 @@
  */
 package EnglishForDream;
 
-import Database.Database;
-import TranslateTTS.TextToSpeech;
-import java.awt.Cursor;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -44,7 +39,6 @@ public class GUI_Flashcard extends Gui_control {
     }
 
     private void randVocab() {
-        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
         db.close();
@@ -213,8 +207,7 @@ public class GUI_Flashcard extends Gui_control {
     }//GEN-LAST:event_answerKeyPressed
 
     private void speechflashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speechflashActionPerformed
-        TextToSpeech tts = new TextToSpeech();
-        tts.speak((String) this.data.get(0).get(0));
+        tts.speak((String) this.data.get(0).get(0),"kevin16");
         this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
 

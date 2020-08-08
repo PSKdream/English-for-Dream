@@ -5,15 +5,11 @@
  */
 package EnglishForDream;
 
-import Database.Database;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import TranslateTTS.*;
-import java.awt.Cursor;
-import java.awt.Image;
-import java.awt.Point;
+
 
 /**
  *
@@ -188,8 +184,7 @@ public class GUI_Translate extends Gui_control {
     }//GEN-LAST:event_backActionPerformed
 
     private void texttospeechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texttospeechActionPerformed
-        TextToSpeech tts = new TextToSpeech();
-        tts.speak(this.wordField.getText());
+          tts.speak(this.wordField.getText(),"kevin16");
     }//GEN-LAST:event_texttospeechActionPerformed
 
     private void wordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wordFieldActionPerformed
@@ -197,17 +192,17 @@ public class GUI_Translate extends Gui_control {
     }//GEN-LAST:event_wordFieldActionPerformed
 
     private void addTextToDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addTextToDataActionPerformed
-        Database db = new Database("jdbc:sqlite:data.db");
-        Translate translator = new Translate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
         db.connect();
-        db.insert.insertData(this.wordField.getText(), translator.translate(this.wordField.getText(), "en", "th"));
+       // System.out.println(db.select.getRow("vocab", this.wordField.getText().toLowerCase()));
+        if(db.select.getRow("vocab", this.wordField.getText().toLowerCase()).isEmpty()){
+            //System.out.println("ddddddddddddd");
+            db.insert.insertData(this.wordField.getText().toLowerCase(), translator.translate(this.wordField.getText(), "en", "th"));   
+        }
         db.close();
         this.translate1ActionPerformed(null);
     }//GEN-LAST:event_addTextToDataActionPerformed
 
     private void translate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_translate1ActionPerformed
-
-        Translate translator = new Translate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
         String text = translator.translate(this.wordField.getText(), "en", "th");
         System.out.println(text);
         this.translatedArea.setText(text);
@@ -221,6 +216,7 @@ public class GUI_Translate extends Gui_control {
     private void addTextToDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addTextToDataMouseExited
        setMouseEntered_Exited(addTextToData, "save");
     }//GEN-LAST:event_addTextToDataMouseExited
+    @Override
     public void setMouseEntered_Exited(JButton a, String Imagefile) {
         ImageIcon icon = new ImageIcon("src/EnglishForDream/" + Imagefile + ".png");
         a.setIcon(icon);

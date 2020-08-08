@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 package EnglishForDream;
-import java.awt.Cursor;
+
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 /**

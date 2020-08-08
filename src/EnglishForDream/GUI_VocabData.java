@@ -1,8 +1,6 @@
 
 package EnglishForDream;
 
-import Database.Database;
-import TranslateTTS.TextToSpeech;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -24,7 +22,6 @@ public class GUI_VocabData extends Gui_control {
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
 
-        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.getTable(); //retrun ArrayList type Object
         db.close();
@@ -157,13 +154,11 @@ public class GUI_VocabData extends Gui_control {
             // JTable target = new JTable();
             JTable target = (JTable) evt.getSource();
             int row = target.getSelectedRow(); // select a row
-            TextToSpeech tts = new TextToSpeech();
-            tts.speak((String) this.tableData.getValueAt(row, 0));
+            tts.speak((String) this.tableData.getValueAt(row, 0),"kevin16");
         }
     }//GEN-LAST:event_tableDataMouseClicked
 
     private void DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteActionPerformed
-        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         int count = this.tableData.getSelectedRows().length;
         System.out.println(this.tableData.getSelectedRows());

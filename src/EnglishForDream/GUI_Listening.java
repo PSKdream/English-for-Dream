@@ -5,11 +5,9 @@
  */
 package EnglishForDream;
 
-import Database.Database;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
-import TranslateTTS.TextToSpeech;
 
 
 /**
@@ -37,7 +35,6 @@ public class GUI_Listening extends Gui_control {
     }
 
     private void randVocab() {
-        Database db = new Database("jdbc:sqlite:data.db");
         db.connect();
         this.data = db.select.query("SELECT vocab,meaning FROM DATA ORDER BY random() LIMIT 10"); //retrun ArrayList type Object
         db.close();
@@ -174,8 +171,7 @@ public class GUI_Listening extends Gui_control {
     }//GEN-LAST:event_backActionPerformed
 
     private void speechActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        TextToSpeech tts = new TextToSpeech();
-        tts.speak((String) this.data.get(0).get(0));
+        tts.speak((String) this.data.get(0).get(0),"kevin16");
         this.answer.requestFocus();
     }//GEN-LAST:event_jButton6ActionPerformed
 
