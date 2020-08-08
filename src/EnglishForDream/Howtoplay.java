@@ -5,6 +5,9 @@
  */
 package EnglishForDream;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author dram-
@@ -16,6 +19,9 @@ public class Howtoplay extends javax.swing.JFrame {
      */
     public Howtoplay() {
         initComponents();
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
     }
 
     /**
