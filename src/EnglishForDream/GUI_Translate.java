@@ -78,7 +78,7 @@ public class GUI_Translate extends Gui_control {
         jPanel2.add(addTextToData, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 190, 160));
 
         texttospeech.setBackground(new java.awt.Color(255,153,153));
-        texttospeech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        texttospeech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechnbt.png"))); // NOI18N
         texttospeech.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         texttospeech.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -171,11 +171,11 @@ public class GUI_Translate extends Gui_control {
     }// </editor-fold>//GEN-END:initComponents
 
     private void texttospeechMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_texttospeechMouseEntered
-        setMouseEntered_Exited(texttospeech, "speechover");
+        setMouseEntered_Exited(texttospeech, "speechnbtover");
     }//GEN-LAST:event_texttospeechMouseEntered
 
     private void texttospeechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_texttospeechMouseExited
-        setMouseEntered_Exited(texttospeech, "speechbt");
+        setMouseEntered_Exited(texttospeech, "speechnbt");
     }//GEN-LAST:event_texttospeechMouseExited
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed

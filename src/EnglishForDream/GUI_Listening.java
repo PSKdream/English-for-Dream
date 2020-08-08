@@ -119,7 +119,7 @@ public class GUI_Listening extends Gui_control {
         jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
 
         speech.setBackground(new java.awt.Color(255,204,204));
-        speech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        speech.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechnbt.png"))); // NOI18N
         speech.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         speech.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -206,11 +206,11 @@ public class GUI_Listening extends Gui_control {
     }//GEN-LAST:event_answerKeyPressed
 
     private void speechMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseEntered
-        setMouseEntered_Exited(speech, "speechover");
+        setMouseEntered_Exited(speech, "speechnbtover");
     }//GEN-LAST:event_speechMouseEntered
 
     private void speechMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechMouseExited
-        setMouseEntered_Exited(speech, "speechbt");
+        setMouseEntered_Exited(speech, "speechnbt");
     }//GEN-LAST:event_speechMouseExited
 
    

@@ -72,7 +72,6 @@ public class GUI_Flashcard extends Gui_control {
         choiceNum = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1150, 720));
         setResizable(false);
 
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
@@ -94,8 +93,16 @@ public class GUI_Flashcard extends Gui_control {
         jPanel2.add(checkflash, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, 190, 160));
 
         speechflash.setBackground(new java.awt.Color(255,153,153));
-        speechflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechbt.png"))); // NOI18N
+        speechflash.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/speechnbt.png"))); // NOI18N
         speechflash.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        speechflash.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                speechflashMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                speechflashMouseExited(evt);
+            }
+        });
         speechflash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speechflashActionPerformed(evt);
@@ -210,6 +217,14 @@ public class GUI_Flashcard extends Gui_control {
         tts.speak((String) this.data.get(0).get(0),"kevin16");
         this.answer.requestFocus();
     }//GEN-LAST:event_speechflashActionPerformed
+
+    private void speechflashMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseEntered
+        setMouseEntered_Exited(speechflash, "speechnbtover");
+    }//GEN-LAST:event_speechflashMouseEntered
+
+    private void speechflashMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_speechflashMouseExited
+      setMouseEntered_Exited(speechflash, "speechnbt");
+    }//GEN-LAST:event_speechflashMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

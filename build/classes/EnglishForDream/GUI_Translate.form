@@ -99,7 +99,7 @@
                   <Connection code="new java.awt.Color(255,153,153)" type="code"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/EnglishForDream/speechbt.png"/>
+                  <Image iconType="3" name="/EnglishForDream/speechnbt.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
