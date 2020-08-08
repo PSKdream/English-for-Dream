@@ -44,6 +44,7 @@ public class GUI_Home extends Gui_control {
         gotoworddata = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -131,6 +132,14 @@ public class GUI_Home extends Gui_control {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/dream.png"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 210, 170));
 
+        jButton1.setText("How to play");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, 210, 60));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,6 +150,8 @@ public class GUI_Home extends Gui_control {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
+
+        CustomCursor();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,6 +191,11 @@ public class GUI_Home extends Gui_control {
     private void gotolisteningMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gotolisteningMouseExited
         setMouseEntered_Exited(gotolistening,"btR");
     }//GEN-LAST:event_gotolisteningMouseExited
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+      new Howtoplay().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     public static void main(String args[]) {
       
@@ -198,6 +214,7 @@ public class GUI_Home extends Gui_control {
     javax.swing.JButton gotoflash;
     javax.swing.JButton gotolistening;
     javax.swing.JButton gotoworddata;
+    javax.swing.JButton jButton1;
     javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel2;
     javax.swing.JPanel jPanel2;

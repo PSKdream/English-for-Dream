@@ -5,6 +5,9 @@
  */
 package EnglishForDream;
 
+import Database.Database;
+import TranslateTTS.TextToSpeech;
+import TranslateTTS.Translate;
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Point;
@@ -17,6 +20,10 @@ import javax.swing.JButton;
  * @author dram-
  */
 class Gui_control extends javax.swing.JFrame implements GUI_Interface {
+    protected Database db = new Database("jdbc:sqlite:data.db");
+    protected TextToSpeech tts = new TextToSpeech();
+    protected Translate translator = new Translate("AIzaSyBmbhyWZW_ywsIDuHEyKvfn1dillOn1hz4");
+    
     @Override
     public void CustomCursor(){
          Toolkit tool = Toolkit.getDefaultToolkit();

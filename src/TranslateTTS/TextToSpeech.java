@@ -5,9 +5,10 @@ import com.sun.speech.freetts.Voice;
 import com.sun.speech.freetts.VoiceManager;
 
 public class TextToSpeech {
-    private static String VoiceName = "kevin16";
+    private String VoiceName ;// "kevin";
     
-    public void speak(String word){
+    public void speak(String word,String name){
+        this.VoiceName = name;
         Voice voice = VoiceManager.getInstance().getVoice(VoiceName);
         voice.allocate();
         try{
