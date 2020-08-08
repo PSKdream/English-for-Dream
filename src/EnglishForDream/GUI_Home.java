@@ -42,9 +42,9 @@ public class GUI_Home extends Gui_control {
         jPanel5 = new javax.swing.JPanel();
         gotoaddword = new javax.swing.JButton();
         gotoworddata = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -124,21 +124,25 @@ public class GUI_Home extends Gui_control {
         });
         jPanel5.add(gotoworddata, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 90, 80));
 
-        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontengfordream.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/dream.png"))); // NOI18N
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 210, 170));
-
+        jButton1.setBackground(new java.awt.Color(255, 204, 153));
+        jButton1.setFont(new java.awt.Font("Showcard Gothic", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(102, 51, 0));
         jButton1.setText("How to play");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 200, 210, 60));
+        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 210, 60));
+
+        jPanel3.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1150, 80));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/fontengfordream.png"))); // NOI18N
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EnglishForDream/dream.png"))); // NOI18N
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 210, 170));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
